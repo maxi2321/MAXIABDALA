@@ -1,0 +1,1518 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\ftech\fcharset77 Symbol;
+\f3\fswiss\fcharset0 ArialMT;\f4\fswiss\fcharset0 Arial-BoldMT;\f5\froman\fcharset0 Times-Bold;
+\f6\fswiss\fcharset0 Arial-ItalicMT;\f7\froman\fcharset0 TimesNewRomanPSMT;\f8\fswiss\fcharset0 ArialNarrow-Bold;
+\f9\froman\fcharset0 Times-Italic;\f10\fmodern\fcharset0 CourierNewPSMT;\f11\fnil\fcharset0 STIXGeneral-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red33\green255\blue6;\red255\green255\blue255;
+\red24\green25\blue27;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c97680\c0;\csgray\c100000;
+\cssrgb\c12549\c12941\c14118;\cssrgb\c100000\c100000\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid201\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid401\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13920\viewh12480\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 resumenes:\
+ Transcripci\'f3n musical mediante redes neuronales profundas:
+\f1\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+Autor 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 Jorge Donis del \'c1lamo 
+\fs24 \
+
+\fs29\fsmilli14667 Tutor/es 
+\fs24 \
+
+\fs29\fsmilli14667 Jos\'e9 Javier Valero Mas 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs26\fsmilli13333 \cf2 Departamento de Lenguajes y Sistemas Inform\'e1ticos 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 Jorge Calvo Zaragoza 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs26\fsmilli13333 \cf2 Departamento de Lenguajes y Sistemas Inform\'e1ticos 
+\fs24 \
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 Primero se realiza un preprocesado de la se\'f1al de audio que consiste un downsampling a 22kHz y la posterior transformaci\'f3n a tiempo-frecuencia mediante la STFT
+\fs21\fsmilli10667 \up10 4
+\fs29\fsmilli14667 \up0 . Despu\'e9s se proceden a calcular distintas caracter\'edsticas. 
+\fs24 \
+
+\fs29\fsmilli14667 Por una parte se calcula el Patr\'f3n Espectral (SP). \'c9ste codifica el contenido t\'edmbrico de la canci\'f3n
+\fs21\fsmilli10667 \up10 5
+\fs29\fsmilli14667 \up0 . El SP se calcula ordenando (por bloques) la intensidad de las frecuencias. A partir del SP se calcula el DSP (Delta Spectral Pattern), que simplemente mide la variabilidad de los timbres. De manera an\'e1loga, se calcula, a partir del DSP el VDSP (Variance Delta Spectral Pattern). 
+\fs24 \
+
+\fs29\fsmilli14667 Para codificar la estructura r\'edtmica, se usa el Patr\'f3n Logar\'edtmico de Fluctuaci\'f3n (LFP). \'c9ste intenta medir la periodicidad de las frecuencias. Por ejemplo, en un comp\'e1s simple de 
+\fs32 \up8 4
+\fs29\fsmilli14667 \up0 , con un tempo andante (80 negras por minuto), cada 1,33 segundos se podr\'e1 observar un aumento de intensidad en todas las frecuencias (en concreto, las frecuencias de las notas de los instrumentos como el bajo). 
+\fs24 \
+
+\fs29\fsmilli14667 Despu\'e9s se calcula el Patr\'f3n de Correlaci\'f3n (CP). \'c9ste es una matriz cuadrada en la que se mide la correlaci\'f3n entre cada una de las distintas frecuencias. Por ejemplo, si la bater\'eda suele tocar el hi-hat junto al bombo, se ver\'e1 una relaci\'f3n entre esas frecuencias (lo cual es una caracter\'edstica representativa de esa canci\'f3n). 
+\fs24 \
+
+\fs29\fsmilli14667 Finalmente se calcula el Patr\'f3n de Contraste Espectral (SCP). Simplemente mide (por bloques) la distancia entre la intensidad de la frecuencia m\'e1s intensa y la intensidad de la frecuencia menos intensa. En general, esto es una m\'e9trica de la harmonicity
+\fs21\fsmilli10667 \up10 6
+\fs29\fsmilli14667 \up0 . 
+\fs24 \
+
+\fs29\fsmilli14667 En la Figura 1.2 podemos ver una representaci\'f3n de todas estas caracter\'edsticas: 
+\fs24 \
+
+\fs29\fsmilli14667 Posteriormente se concatenan todas las caracter\'edsticas en un vector de 9448 dimensiones. Este vector es el que caracteriza a la canci\'f3n. Dos canciones similares tendr\'e1n vectores similares. 
+\fs24 \
+
+\fs29\fsmilli14667 El vector se puede usar directamente para la clasificaci\'f3n en g\'e9neros. En este art\'edculo, se emplea una red neuronal para ello. La entrada es el propio vector y las salidas son las distintas categor\'edas. 
+\fs24 \
+
+\fs29\fsmilli14667 Tambi\'e9n se pueden comparar vectores para ver su similitud. Para ello se usa la distancia de Manhattan
+\fs21\fsmilli10667 \up10 7
+\fs29\fsmilli14667 \up0 .. \
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs37\fsmilli18667 \cf2 1.4 Music Source Separation 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 Music Source Separation (MSS) es el campo de la MIR que consiste en la descompo- sici\'f3n de una canci\'f3n en sus correspondientes tracks
+\fs21\fsmilli10667 \up10 9 
+\fs29\fsmilli14667 \up0 o incluso instrumentos. La Figura 1.3 muestra el resultado al cual se trata de llegar con Music Source Separation (MSS). 
+\fs24 \
+
+\fs29\fsmilli14667 El primer paso es, como suele darse en MIR, representar de la se\'f1al en el plano tiempo- frecuencia (espectrograma). Despu\'e9s, existen varios m\'e9todos para hacer la separaci\'f3n. 
+\fs24 \
+
+\fs29\fsmilli14667 Uno de ellos es la Non-negative Matrix Factorization (NMF). La entrada al problema es el espectrograma, que en definitiva es una matriz de intensidades de frecuencias S
+\fs21\fsmilli10667 \dn6 t,n 
+\fs29\fsmilli14667 \up0 donde t es el n\'famero de timesteps
+\fs21\fsmilli10667 \up10 10 
+\fs29\fsmilli14667 \up0 y n es el n\'famero de distintas frecuencias. El problema que se intenta resolver es obtener dos matrices D
+\fs21\fsmilli10667 \dn6 n,k 
+\fs29\fsmilli14667 \up0 (diccionario) y A
+\fs21\fsmilli10667 \dn6 k,t 
+\fs29\fsmilli14667 \up0 (matriz de activaci\'f3n) tales que S = DA
+\fs21\fsmilli10667 \up10 11
+\fs29\fsmilli14667 \up0 . k vendr\'eda a ser el tama\'f1o del diccionario. En general, se busca una k < n. Cada columna de I es un vector de k plantillas espectrales (cada plantilla, de longitud f). Tras la factorizaci\'f3n, se puede apreciar en A los instantes t durante los cuales se activa cada una de las plantillas espectrales. En la Figura 1.4 se observa la factorizaci\'f3n claramente. Si escogemos una k igual al n\'famero de notas (o notas MIDI), entonces estaremos haciendo AMT (ver Secci\'f3n 1.6). 
+\fs24 \
+
+\fs29\fsmilli14667 Con esto, ya tendr\'edamos los intervalos temporales durante los cuales ciertas frecuencias se activan con una cierta intensidad. Si k = 5, tendr\'edamos la separaci\'f3n para los tracks: vocals, bass, drums, guitar y others. Finalmente, queda extraer las frecuencias necesarias del espectrograma original. Una vez tenemos las frecuencias para cada track aisladas, queda realizar la transformaci\'f3n inversa frecuencia-tiempo para volver a obtener una se\'f1al de sonido. 
+\fs24 \
+
+\fs29\fsmilli14667 Cabe decir que este proceso puede brindar unos mejores resultados si la canci\'f3n ya est\'e1 separada en formato est\'e9reo, ya que la percusi\'f3n y el bajo suelen encontrarse en el canal izquierdo y el resto de instrumentos en el derecho. 
+\fs24 \
+
+\fs29\fsmilli14667 Las aplicaciones del MSS son evidentes. Cuando no se tiene acceso a los tracks originales
+\fs21\fsmilli10667 \up10 12
+\fs29\fsmilli14667 \up0 , se pueden obtener de manera autom\'e1tica. \'c9stos pueden ser usados simplemente para can- tar karaoke, por entretenimiento. Tambi\'e9n puede servir en \'e1mbitos educativos para ense\'f1ar canto. Otro ejemplo de aplicaci\'f3n ser\'eda aligerar la carga de un sistema de recomendaci\'f3n 
+\fs24 \
+
+\fs29\fsmilli14667 musical 
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 09.24.29.png \width13400 \height10280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 ELECCION DE LA VENTANA :\
+
+\fs29\fsmilli14667 La elecci\'f3n de la funci\'f3n de ventana no es una tarea trivial (\'93Understanding FFT\'92s and Windowing\'94, s.f.). Cada funci\'f3n tiene sus caracter\'edsticas. Ciertas funciones nos permitir\'e1n resolver distintas problem\'e1ticas. En cualquier caso, hay que analizar el contenido frecuencial de la onda.\
+\'95 Si la se\'f1al contiene interferencias de frecuencias muy distantes a la frecuencia de inte- r\'e9s, se usar\'e1 una ventana en la que los extremos decrezcan r\'e1pidamente. La ventana de Hann es un ejemplo de este tipo de ventana.\
+\'95 Si la se\'f1al contiene interferencias de frecuencias pr\'f3ximas, se usar\'e1 una ventana en la que los extremos decrezcan lentamente. Por ejemplo, la ventana de Hamming.\
+\'95 Si existen dos se\'f1ales con frecuencias muy pr\'f3ximas, es interesante usar un funci\'f3n\
+de ventana cuyo pico central se muy estrecho. Por ejemplo, una ventana Gaussiana\
+w[n] = exp(\uc0\u8722 1(n\u8722 N/2)2). 2 \u963 N/2\
+\'95 Si la amplitud de la frecuencia es muy pronunciada pero no es muy precisa (ocupa varias frecuencias), entonces se ha de escoger una funci\'f3n de ventana con un poco central amplio. Por ejemeplo, la ventana Plank-taper.\
+\'95 Si el espectro frecuencial es denso (o plano), es mejor usar la ventana uniforme. La ventana uniforme es equivalente a no usar ninguna ventana.\
+La ventana de Hann es una buena elecci\'f3n en el 95% de los casos (\'93Understanding FFT\'92s and Windowing\'94, s.f.). Tanto la ventana de Hann como la Hamming son sinusoides y esto las dota de un pico central ancho que captura muy bien la frecuencia original.\
+Con esto, el proceso de Short-Time Fourier Transform (STFT) quedar\'eda resumido por la Figura 2.9. La entrada al problema es la se\'f1al compleja. La salida es el espectro tiempo-frecuencia. Los par\'e1metros que podemos establecer son:\
+\'95 Funci\'f3n de ventana w[]. Explicada anteriormente, sirve para suavizar los extremos. Multiplicaremos la onda compleja en el intervalo deseado por este valor.\
+\'95 N\'famero de muestras por bloque n. Como explic\'e1bamos antes, aplicaremos DFT sobre unas peque\'f1as porciones de la se\'f1al original. Estos bloques o frames est\'e1n com- puestos por n muestras cada uno. A partir de ahora, en general, al tratar de valores discretos, ya no usaremos el tiempo como magnitud, sino el n\'famero de muestras
+\fs21\fsmilli10667 \up10 10
+\fs29\fsmilli14667 \up0 . En caso de que el n\'famero total de muestras de la se\'f1al no sea divisible por este valor n, se suele emplear zero-padding
+\fs21\fsmilli10667 \up10 11 
+\fs29\fsmilli14667 \up0 para que cada frame llegue hasta este valor. 
+\fs24 \
+
+\fs29\fsmilli14667 \'95 Tama\'f1o de ventana M. Es el n\'famero de muestras que ser\'e1n multiplicadas por la funci\'f3n de ventana. El an\'e1lisis de este algoritmo se vuelve muy complejo si M \uc0\u824 = n. Sin embargo, M puede ser menor que n. Cuando multiplicamos menos muestras por la funci\'f3n de ventana que el tama\'f1o del frame, el resto valdr\'e1n 0. 
+\fs24 \
+
+\fs29\fsmilli14667 \'95 Hop-length R. Este par\'e1metro nos permite describir c\'f3mo queremos que se solapen los frames. R es el n\'famero de muestras entre el comienzo de cada frame. R siempre es menor que n si queremos que haya solape. Cuando R = n, no hay ning\'fan solape. 
+\fs24 \
+
+\fs29\fsmilli14667 Por esto, cada vez que hemos empleado la DFT, podemos emplear un algoritmo mucho m\'e1s eficiente conocido como Fast Fourier Transform (FFT). Este algoritmo no repite k veces el mismo sumatorio, porque hace uso de una matriz en la cual va guardando resultados previamente calculados (programaci\'f3n din\'e1mica iterativa). 
+\fs24 \
+
+\fs29\fsmilli14667 Lo m\'e1s relevante de la f\'f3rmula anterior es que toma dos par\'e1metros: la frecuencia k y el frame m. De la misma manera que la DFT tiene dos dimensiones: frecuencia e intensidad; la STFT tiene tres dimensiones: frecuencia, tiempo
+\fs21\fsmilli10667 \up10 12 
+\fs29\fsmilli14667 \up0 e intensidad. Estas tres dimensiones son com\'fanmente representadas mediante dos ejes y un color, dando lugar al famoso espectrograma (ver Figura 2.11). 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs37\fsmilli18667 \cf2 4.1 Red Neuronal 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 La entrada es la imagen espectrograma tiempo-frecuencia de la muestra de audio (ver Figura 2.11). En nuestro caso, el corpus
+\fs21\fsmilli10667 \up10 3 
+\fs29\fsmilli14667 \up0 cuenta \'fanicamente con ficheros MIDI. El primer paso es usar alg\'fan instrumento virtual para generar las se\'f1ales de audio. En este caso, con la herramienta timidity generamos los fichero con codificaci\'f3n WAV usando un piano virtual con una tasa de muestreo de 44.1KHz. Despu\'e9s procedemos a calcular la Short-Time Fourier Transform (STFT) con hop_length de 512 muestras y window_length de 2048 muestras. La funci\'f3n de ventana es la de Hann. A la hora de graficar el espectrograma usamos una escala lineal en el eje Y. El resultado final se puede ver en la Figura 4.2. El \'fanico post-procesado que se hace de esta imagen es un escalado (la altura tiene que ser fija) y una reducci\'f3n a un \'fanico canal de color (blanco y negro). 
+\fs24 \
+
+\fs29\fsmilli14667 Sobre esta imagen aplicaremos filtros de convoluci\'f3n (ver Figura 4.3). Los filtros (o ker- nels) de convoluci\'f3n son matrices que son aplicadas sobre la imagen. Cada p\'edxel se convierte en una combinaci\'f3n lineal de sus p\'edxeles adyacentes, en la que los coeficientes son los valores de la matriz de convoluci\'f3n. Estos coeficientes son aprendidos durante el backpropagation. Cabe establecer el n\'famero de filtros y el tama\'f1o del kernel. 
+\fs24 \
+
+\fs29\fsmilli14667 Tras cada filtro de convoluci\'f3n se aplica un pooling. El pooling es sencillamente un agrupa- miento de los p\'edxeles. Normalmente se escoge el valor m\'e1ximo de cada kernel, pero tambi\'e9n se puede aplicar la media o incluso el valor m\'ednimo. Cabe destacar que cuando se aplica una capa de pooling se reduce la dimensionalidad. 
+\fs24 \
+
+\fs29\fsmilli14667 Tras aplicar varias capas de convoluci\'f3n y pooling, en definitiva, la red est\'e1 aprendiendo caracter\'edsticas sobre la \'93forma\'94 de la imagen. Y con las capas de pooling se est\'e1 comprimiendo esta informaci\'f3n. Al final, se puede entender que la imagen original ha sido segmentada y sobre cada segmento se ha obtenido un vector de caracter\'edsticas. 
+\fs24 \
+
+\fs29\fsmilli14667 Sobre cada vector de caracter\'edsticas se aplica una capa recurrente. En este caso dos redes Long Short-Term Memory (LSTM). Las redes recurrentes son redes cuya entrada depende de su propia salida (ver Figura 4.4). Son empleadas con datos secuenciales de longitud indeterminada, como es el caso de las se\'f1ales de audio, o las im\'e1genes
+\fs21\fsmilli10667 \up10 4
+\fs29\fsmilli14667 \up0 . En este caso, sirve para introducir una dimensi\'f3n temporal al problema de aprendizaje. De hecho, emplean el algoritmo de backpropagation through time para minimizar la funci\'f3n de error. En definitiva, las redes recurrentes tienen un estado interno que es un alias para la memoria. Una red Long Short-Term Memory (LSTM), cuando analiza el segmento (frame) t
+\fs21\fsmilli10667 \dn6 4 
+\fs29\fsmilli14667 \up0 tiene en cuenta las salida de la red t
+\fs21\fsmilli10667 \dn6 3
+\fs29\fsmilli14667 \up0 , que a su vez depende de la t
+\fs21\fsmilli10667 \dn6 2
+\fs29\fsmilli14667 \up0 ... Adem\'e1s, se puede conectar la salida de la red del frame siguiente a la propia, con lo que se obtiene una red LSTM bidireccional. \'c9stas tienen memoria tanto de los frames anteriores como de los siguientes. 
+\fs24 \
+
+\fs29\fsmilli14667 Finalmente, se usa una capa densa normal para proporcionar la salida softmax para cada categor\'eda. Las categor\'edas son el ground-truth, es decir, las etiquetas v\'e1lidas. Son la transcrip- ci\'f3n a notaci\'f3n simb\'f3lica. En este caso hemos acabado escogiendo una notaci\'f3n apodada semantic (ver Figura 4.5). Esta notaci\'f3n tiene un total de 1781 tokens distintos. Hay que tener en cuenta que se tienen que codificar todas las notas con todas las alteraciones y duraciones posibles. Adem\'e1s de los silencios, los compases y las claves. Para agilizar el proceso de traducci\'f3n entre un string como clef-G2 y el \'edndice del token correspondiente (387, en este caso), se emplea un clase auxiliar SemanticTranslator (ver c\'f3digo 4.1). Esta clase tiene dos estructuras de datos, un array y un diccionario. El array tiene como claves los tokens (strings) y como valor el \'edndice. De esta manera, usando una tabla hash se puede traducir en tiempo constante O(1). En el caso del array, el \'edndice es el n\'famero de token y el valor es el propio token. Estas dos estructuras de datos est\'e1n serializadas mediante pickle y guardadas en memoria secundaria. 
+\fs24 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 09.31.33.png \width13400 \height13180 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 09.32.01.png \width14000 \height10260 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 09.32.18.png \width10880 \height6820 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+Con esto, la salida de la CRNN tendr\'e1 1781 dimensiones para cada frame t
+\fs21\fsmilli10667 \dn6 i
+\fs29\fsmilli14667 \up0 . Cada frame se corresponder\'e1 con las caracter\'edsticas de una regi\'f3n rectangular de los p\'edxeles del espectrograma. El tama\'f1o de esta regi\'f3n depende del factor de reducci\'f3n. \'c9ste depende a su vez del n\'famero de capas de pooling y del tama\'f1o de las mismas
+\fs21\fsmilli10667 \up10 5
+\fs29\fsmilli14667 \up0 . En la arquitectura que se presenta se usan espectrogramas de es 256 p\'edxeles de alto y de ancho variable. En la \'faltima capa de convoluci\'f3n se emplean 128 kernels. Con esto cada frame t
+\fs21\fsmilli10667 \dn6 i 
+\fs29\fsmilli14667 \up0 tiene asociado un vector de 256/2
+\fs21\fsmilli10667 \up10 3 
+\f2\fs29\fsmilli14667 \up0 \uc0\u8727 
+\f1  128 
+\f2 \uc0\u8727 
+\f1  2
+\fs21\fsmilli10667 \up10 3 
+\fs29\fsmilli14667 \up0 = 4096 caracter\'edsticas que se corresponden a una regi\'f3n de de 8 p\'edxeles de ancho por 256 de alto. Esta es la entrada a cada nodo de la LSTM. La tabla 4.1 muestra la arquitectura en detalle. \'c9sta incluye capas de dropout para mejor generalizaci\'f3n y capas de batch normalization para acelerar el aprendizaje. 
+\fs24 \
+
+\fs29\fsmilli14667 A la salida de la Convolutional Recurrent Neural Network (CRNN) tenemos un vector de predicciones softmax para cada token. A continuaci\'f3n explicaremos la m\'e9trica de error empleada para que el modelo ap
+\fs32 Cambio de espectrograma 
+\fs24 \
+
+\fs29\fsmilli14667 El primer cambio que pensamos que podr\'eda mejorar la transcripci\'f3n fue el espectrograma. La Figura 5.2 muestra los cambios realizados. En concreto: 
+\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa293\partightenfactor0
+\ls1\ilvl0
+\fs29\fsmilli14667 \cf2 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Se cambia la altura de la imagen de 256 a 192 p\'edxeles (perdiendo resoluci\'f3n). \uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+Se establece un umbral m\'ednimo de intensidad de -70 (valor de intensidad de p\'edxel propio de matplotlib). Si no se supera este umbral, el p\'edxel pasa a ser negro. Tambi\'e9n se establece un umbral m\'e1ximo de 8. \uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+Se reduce el rango de frecuencias. Para abarcar las 88 notas del piano virtual, se usa un rango de entre 27.5Hz (A0) y 3520Hz (A8). \uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+Se cambia a un hop_length de 128 samples. \uc0\u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+Se establece un tama\'f1o de ventana y un n\'famero de muestras por bloque (n) de 1024 \uc0\u8232 (ambos). \u8232 \
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	6.	}\expnd0\expndtw0\kerning0
+Se emplea una escala de Mel en la dimensi\'f3n frecuencial. \uc0\u8232 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 La escala de Mel (de la palabra melod\'eda) es una escala perceptiva de alturas basada en experimentos con oyentes. En estos experimentos se intenta establecer una escala tal que todas las frecuencias suenen equidistantes a o\'eddos humanos. Existen varias escalas de Mel (seg\'fan los experimentos). La f\'f3rmula empleada por librosa para pasar de f hercios (Hz) a m mels es la siguiente: 
+\fs24 \
+
+\fs29\fsmilli14667 m=2595log
+\fs21\fsmilli10667 \dn8 10
+\fs29\fsmilli14667 \up0 (1+ \up18 f \up0 ) 700 
+\fs24 \
+
+\fs29\fsmilli14667 Podemos apreciar como la escala es logar\'edtmica. A primera vista, parece que la Subfigura 5.2b presenta varias ventajas frente a la Subfigura 5.2a. Por un lado, se usan menos fre- cuencias. Esto ayuda a eliminar informaci\'f3n que podemos considerar como redundante. Cabe recordar que estamos tratando con transcripci\'f3n de m\'fasicas monof\'f3nicas. Es decir, s\'f3lo va a existir una frecuencia fundamental en cada instante. El espectrograma de la derecha cla- ramente muestra como se eliminan muchos harm\'f3nicos que son irrelevantes. Por otro lado, esta escala de Mel nos ayuda a resaltar las frecuencias m\'e1s graves. Esto es id\'f3neo, ya que las frecuencias m\'e1s graves son las fundamentales, que son las que determinan la altura 
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs56 \cf2 \expnd0\expndtw0\kerning0
+6 Conclusiones 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 El modelo de transcripci\'f3n presentado muestra claramente que es posible traducir una se\'f1al de audio en una notaci\'f3n simb\'f3lica musical. Por simplicidad, en este caso hemos trabajado con m\'fasica monof\'f3nica, pero se puede extraer que este modelo, con ciertos ajustes, podr\'eda brindar buenos resultados para m\'fasica polif\'f3nica. 
+\fs24 \
+
+\fs29\fsmilli14667 Adem\'e1s, se demuestra que una \'fanica red neuronal puede, en un solo paso, transcribir audio en notaci\'f3n simb\'f3lica (modelo end-to-end). Esto es gracias al m\'e9todo de entrenamiento CTC (Connectionist Temporal Classification). Podemos concluir que este m\'e9todo es, en general, una buena herramienta para resolver problemas de etiquetado de secuencias, como Optical Character Recognition (OCR)
+\fs21\fsmilli10667 \up10 1
+\fs29\fsmilli14667 \up0 , Automatic Speech Recognition (ASR) o Handwritten Text Recognition (HTR). 
+\fs24 \
+
+\fs29\fsmilli14667 M\'e1s en detalle, podemos comprobar que el espectro frecuencial es una buena codifi- caci\'f3n de la informaci\'f3n musical para Automatic Music Transcription (AMT). En concreto, la Short-Time Fourier Transform (STFT) y el uso de im\'e1genes de espectrogramas parecen ser una buena representaci\'f3n gr\'e1fica de las muestras de audio. 
+\fs24 \
+
+\fs29\fsmilli14667 A\'fan con todo, se desprenden algunas conclusiones aparentemente il\'f3gicas de los experimen- tos. Parece sorprendente que la correcci\'f3n a posteriori de las barras de comp\'e1s no mejore el error de validaci\'f3n. A\'fan m\'e1s sospechoso es que el uso de una escala de Mel no brinde mejores resultados. Sin embargo, el funcionamiento de las redes neuronales no deja de ser un tanto obscuro y en ocasiones es dif\'edcil extraer conclusiones l\'f3gicas cuando se trabaja con ellas
+\fs21\fsmilli10667 \up10 2
+\fs29\fsmilli14667 \up0 . 
+\fs24 \
+
+\fs29\fsmilli14667 Finalmente me gustar\'eda recalcar un par de aspectos sobre el Music Information Retrieval (MIR). Este es un campo de investigaci\'f3n plenamente activo (aunque algo reducido). La investigaci\'f3n sigue activa precisamente porque a\'fan estamos muy lejos de llegar a resultados pr\'e1cticos. Sin embargo, quisiera destacar la relevancia y utilidad que puede llegar a tener la MIR en la educaci\'f3n art\'edstica y en la m\'fasica en general. Sin duda, un futuro en el que las m\'e1quinas compusieran m\'fasica o ayudaran a componerla ser\'eda apasionante. \
+\cb3 DE ESTE TRABAJO PODEMOS UTILIZAR LAS EXPLICACIONES DE LAS REDES NEURONALES USADAS, \
+ME GUSTARIA IMPLEMENTAR LO DE LA SEPARACION EN TRACKS, ESTO PODRIA SERVIR PARA VER SI PASARON UN AUTO Y UNA MOTO JUNTAS?\cb1 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 Trabajo Fin de Grado\
+ RECOLECCI\'d3N Y\
+RECONOCIMIENTO DE EVENTOS\
+DOM\'c9STICOS MEDIANTE SENSORES DE SONIDO EN IOT\
+Grado en Ingenier\'eda Inform\'e1ticaEscuela Polit\'e9cnica Superior de Ja\'e9n\
+ Alumno: Jos\'e9 Manuel V\'edlchez Chiach\'edo\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs32 \cf2 El enfoque basado en el aprendizaje profundo m\'e1s com\'fan para la clasificaci\'f3n de sonidos es convertir el archivo de audio en una imagen y luego usar una red neuronal para procesar la imagen. Mostafa et all 
+\f4\b [56] 
+\f3\b0 realiza la clasificaci\'f3n de la m\'fasica utilizando redes neuronales probabil\'edsticas con resultados satisfactorios. La mayor\'eda de los enfoques de clasificaci\'f3n s\'f3lidos utilizan el reconocimiento de patrones supervisado. Sin embargo, Zhang y Schuller 
+\f4\b [57] 
+\f3\b0 expresan el problema de que el etiquetado manual de conjuntos de datos es muy costoso y recomiendan el aprendizaje semi-supervisado como una mejor soluci\'f3n. McLoughlin et 
+\f4\b [58] 
+\f3\b0 afirma que la clasificaci\'f3n del sonido en entornos ruidosos realistas es un desaf\'edo y proponen una red neuronal profunda como una soluci\'f3n viable. Piczak y Zhang et 
+\f4\b [59] 
+\f3\b0 transmiten la idea de que las redes neuronales convolucionales tienen las mejores tasas de precisi\'f3n en el an\'e1lisis de espectrograma. \
+Seg\'fan lo resumido por Chachada et all 
+\f4\b [60]
+\f3\b0 , hay tres formas amplias de procesar sonidos ambientales con fines de clasificaci\'f3n: 
+\f1\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa320\partightenfactor0
+\ls2\ilvl0
+\f3\fs32 \cf2 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Framing-baseddondelasse\'f1alesdeaudioseseparanenframesusandouna ventana de Hamming. Luego, las caracter\'edsticas se extraen de cada frame y se clasifican por separado. \uc0\u8232 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+Procesamiento basado en sub-framing donde los frames se subdividen a\'fan m\'e1s y cada frame se clasifica en base a la votaci\'f3n mayoritaria de los sub- frames. \uc0\u8232 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+Procesamiento secuencial donde las se\'f1ales de audio se dividen en segmentos de t\'edpicamente 30 ms con un 50% de superposici\'f3n. El clasificador luego clasifica las caracter\'edsticas extra\'eddas de estos segmentos.\
+\pard\tx566\pardeftab720\sa320\partightenfactor0
+\cf2 \cb3 EN ESTE TRABAJO HAY RESULTADOS MUY IMPRESIONANTES!\
+DE AQUI SACO LA IDEA DE TRABAJAR CON LA VENTANA DE HAMMING.\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf2 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs45\fsmilli22667 \cf2 Detecci\'f3n de veh\'edculos en circulaci\'f3n mediante visi\'f3n artificial y redes neuronales convolucionales 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs37\fsmilli18667 \cf2 Detection of vehicles in circulation\uc0\u8232 by artificial vision and convolutional neural networks 
+\fs24 \
+
+\fs37\fsmilli18667 Fernando P\'e9rez Guti\'e9rrez 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 M\'c1STER EN INGENIER\'cdA INFORM\'c1TICA. FACULTAD DE INFORM\'c1TICA UNIVERSIDAD COMPLUTENSE DE MADRID \
+\cb3 ACA DETECTAN VEHICULOS PERO POR IMAGENES NO POR AUDIOS
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs37\fsmilli18667 \cf2 TRABAJO FIN DE GRADO 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs74\fsmilli37333 \cf2 PREDICCI\'d3N DE SONIDOS USANDO HARDWARE 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs37\fsmilli18667 \cf2 Autor: Blanca Lluch Ponce Director: Marc Pomar Torres 
+\f1\fs24 \
+
+\f3\fs37\fsmilli18667 Madrid, 2020 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b\fs48 \cf2 3.2 Arquitectura VGGish 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs29\fsmilli14667 \cf2 VGGish es una red neuronal creada con TensorFlow formada por 11 capas como se muestra en la figura 13. Estas 11 capas tienen en com\'fan varios par\'e1metros. Entre ellos los pesos y los sesgos iniciales. Estos dos par\'e1metros son de los mas importantes en cuanto al ritmo de aprendizaje. Al pasar un vector de salida como entrada de la siguiente capa, se le aplican a ese vector los pesos, y se pasan por una capa de activaci\'f3n junto con el sesgo. [37] Para los pesos se aplica un inicializador que genera valores con una distribuci\'f3n normal con una desviaci\'f3n est\'e1ndar de 0.01. Para el sesgo se aplica un inicializador de ceros. Adem\'e1s de estos dos par\'e1metros tambi\'e9n tienen en com\'fan la capa de activaci\'f3n nombrada antes que en este caso se utiliza la capa ReLu (Rectified Linear Units). Esta consiste en aplicar los pesos y el sesgo a la salida de la capa anterior y pasar los valores como entrada a la siguiente capa, modific\'e1ndolos \'fanicamente si son valores negativos, en este caso estos valores los pondr\'eda a cero. \
+Entre estas 11 capas, aparecen la capa de convoluci\'f3n 2D, \cf2 \cb4 Operaci\'f3n de agrupaci\'f3n m\'e1xima 2D, repetici\'f3n, aplanar y capa de conexi\'f3n. Las capas de convoluci\'f3n 2D (conv2d) tienen un tama\'f1o de 
+\f6\i kernel 
+\f3\i0 de 3x3, de relleno (
+\f6\i padding
+\f3\i0 ) 
+\f0 \uc0\u56319 \u56364 
+\f6\i SAME
+\f0\i0 \uc0\u56319 \u56367 
+\f6\i  
+\f3\i0 y de zancada 
+\f6\i (stride) 1 
+\f3\i0 . El relleno 
+\f0 \uc0\u56319 \u56364 
+\f6\i SAME
+\f0\i0 \uc0\u56319 \u56367 
+\f6\i  
+\f3\i0 se utiliza para a\'f1adir ceros en los m\'e1rgenes y no variar las dimensiones del vector de entrada. El efecto que tiene la zancada es sobre como aplicar el 
+\f6\i kernel 
+\f3\i0 al vector, 1 es el predeterminado. Con esta capa\cf5 \cb2  \cf2 \cb1 se genera un mapa de caracter\'edsticas, por medio de operaciones de productos escalares y sumas entre el 
+\f6\i kernel 
+\f3\i0 y los valores que este filtrando en ese momento. 
+\f1\fs24 \
+
+\f3\fs29\fsmilli14667 Las capas de operaci\'f3n de agrupaci\'f3n m\'e1xima (max_pool2d) tienen un tama\'f1o de 
+\f6\i kernel 
+\f3\i0 2x2, un relleno igual que la capa de convoluci\'f3n y una zancada de 2. Con esta capa se elimina la influencia que pueda llegar a tener la posici\'f3n de cada caracter\'edstica de la entrada. Consiste en resumir los datos en el valor m\'e1s activo y presente entre todos los de la entrada. [38] 
+\f1\fs24 \
+
+\f3\fs29\fsmilli14667 Las capas de repetici\'f3n (
+\f6\i repeat)
+\f3\i0 , aplican la misma capa con los mismos argumentos tantas veces como se le indique, en este caso 2 veces. La capa de aplanar (
+\f6\i flatten) 
+\f3\i0 consiste en aplanar la entrada sin variar el tama\'f1o de lote (
+\f6\i batch size
+\f3\i0 ).\cb6  \cf2 El tama\'f1o de lote consiste en el numero de elementos del 
+\f6\i dataset 
+\f3\i0 que se entrenan a la vez. El numero de iteraciones es la cantidad de lotes necesarios para completar el entrenamiento de la red con todo el 
+\f6\i dataset
+\f3\i0 . En el caso de VGGish el 
+\f6\i batch size 
+\f3\i0 es 100. Por \'faltimo, la capa de conexi\'f3n (
+\f6\i fully_connected) 
+\f3\i0 crea una matriz de pesos que multiplica por la entrada y reduce la salida al numero de caracter\'edsticas que ha de tener la salida. 
+\f1\fs24 \cf2 \cb1 \
+
+\f3\fs29\fsmilli14667 En el caso de querer conectar esta red a otra para clasificar los audios ser\'eda necesario a\'f1adir una capa de activaci\'f3n no lineal entre las dos redes neuronales conectadas. Se utiliza una capa de activaci\'f3n no lineal porque produce un mayor cambio entre la salida de una red y la entrada de otra que es esencial para que la red modele y aprenda con informaci\'f3n m\'e1s compleja. [39] \
+\cb3 ESTO SE PODRIA IMPLEMENTAR
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs56 \cf2 Trabajo Fin de Grado\uc0\u8232 Grado en Ingenier\'eda de las Tecnolog\'edas de Telecomunicaci\'f3n 
+\f1\fs24 \
+
+\f7\fs56 Clasificaci\'f3n autom\'e1tica de sonidos utilizando aprendizaje m\'e1quina 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs40 \cf2 Autor: Patricio Rodr\'edguez Ram\'edrez Tutor: Francisco Jos\'e9 Simois Tirado 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f8\b\fs37\fsmilli18667 \cf2 2.3. Seg\'fan las caracter\'edsticas del sonido 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 Todas estas citas anteriores tienen como punto en com\'fan su arquitectura basada en redes neuronales. A continuaci\'f3n, vamos a introducir otros trabajos centr\'e1ndonos en las caracter\'edsticas del audio que le pasamos al clasificador. Este punto tambi\'e9n lo desarrollaremos en el apartado siguiente. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Uno de los primeros trabajos en el \'e1rea del reconocimiento de audio fue el de Aucouturier et al. [27] (2007). En \'e9l los autores extra\'edan los Coeficientes Cepstrales en la Frecuencia de Mel (MFCCs) a los audios y utilizaban un modelo mixto gaussiano (GMM) para clasificar. Su trabajo dio muy buenos resultados. Sin embargo, el trabajo de Lagrange et al. [28] (2015) demostr\'f3 que el resultado estaba sesgado a un set de datos con muy poca variabilidad. Lagrange et al. aplicaron nuevos 
+\f9\i datasets 
+\f7\i0 con mayor variabilidad al modelo y los resultados obtenidos no fueron tan excepcionales. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Una opci\'f3n es calcular una variedad de caracter\'edsticas al sonido. Eronen et al. [29] (2006) calcularon los MFCCs, la tasa de cruces por cero, el ancho de banda, etc\'e9tera. Para la clasificaci\'f3n emplearon el modelo oculto de M\'e1rkov (HMM). Geiger et al. [30] (2013) emplearon 13 caracter\'edsticas cepstrales, 35 caracter\'edsticas espectrales, 6 caracter\'edsticas de energ\'eda y 3 caracter\'edsticas relacionadas con la voz. Para la clasificaci\'f3n usaron una m\'e1quina de soporte de vectores (SVM). 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Phan et al. [31] (2016) emplearon como caracter\'edsticas los Coeficientes Cepstrales en la Frecuencia Gammatone (GFCCs) y como clasificador una m\'e1quina de soporte de vectores. Por su parte, Roma et al. [32] (2013) emplean como caracter\'edsticas los coeficientes cepstrales en la frecuencia de mel m\'e1s el c\'e1lculo de par\'e1metros de recurrencia en los audios. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Una caracter\'edstica de entrada al sistema de clasificaci\'f3n puede ser el histograma de gradientes orientados (HOG). Bisot et al. [33] (2015) obtienen el histograma de gradientes orientados del espectrograma logar\'edtmico de frecuencia del extracto de audio. Utilizan un clasificador basado en una m\'e1quina de soporte de vectores. Rakotomamonjya et al. [34] (2015) obtienen el histograma de gradientes orientados del espectrograma de la transformada de Q constante (CQT). Emplean varios sets de datos para su experimentaci\'f3n, con distintos clasificadores y resultados. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Cauchi et al. [35] (2013) desarrollaron un modelo en base a la factorizaci\'f3n no negativa de matrices (NMF) para establecer las similitudes de los audios grabados en estaciones de tren. Bisot et al. [36] (2016) tambi\'e9n emplearon la factorizaci\'f3n no negativa de matrices para su problema de clasificaci\'f3n de sonidos ambientales. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Benetos et al. [37] (2012) usaron una variaci\'f3n del an\'e1lisis de componentes principales (PCA) para extraer las caracter\'edsticas de los audios y entrenar su modelo. Lee et al. [38] (2013) utilizan una m\'e1quina estricta de Boltzmann dispersa (RBM) para obtener las caracter\'edsticas de entrada. Salamon et al. [39] (2015) calcularon los espectrogramas de mel, despu\'e9s aplicaron an\'e1lisis de componentes principales y finalmente emplearon el algoritmo 
+\f9\i k-means 
+\f7\i0 esf\'e9rico (SKM) para extraer las caracter\'edsticas. Tambi\'e9n estudiaron este procedimiento de manera no supervisada. [40] (2015). 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 5 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 \dn3 6 \up0 Estado del arte 
+\f1\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page30image57222704.png \width8138 \height17 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 Todos los trabajos citados nos han demostrado que existen muchas maneras de abordar las tareas de clasificaci\'f3n de audio ambiental. Para finalizar este extenso cap\'edtulo sobre el estado del arte nos vamos a centrar en el trabajo de Salamon et al., que han experimentado diversos m\'e9todos con un set de datos de sonidos ambientales. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 En el trabajo [41] (2014) los autores presentan la taxonom\'eda de los sonidos urbanos y crean el 
+\f9\i dataset 
+\f7\i0 con el que van a trabajar. Las caracter\'edsticas de entrada al sistema son los coeficientes cepstrales a la frecuencia de mel y el clasificador se basa en una m\'e1quina de soporte de vectores. En el trabajo [40] (2015) visto con anterioridad emplean como entrada al sistema el resultado del algoritmo 
+\f9\i k-means 
+\f7\i0 esf\'e9rico aplicado a los espectrogramas. El clasificador se basa en el algoritmo de \'e1rboles aleatorios. En el trabajo [39] (2015) tambi\'e9n emplean como entrada la salida del algoritmo 
+\f9\i k-means 
+\f7\i0 esf\'e9rico aplicado a los espectrogramas. El clasificador se basa en una m\'e1quina de soporte de vectores. Finalmente en el trabajo [42] (2017) emplean como entrada al sistema los espectrogramas de los extractos de audio y el clasificador es una red neuronal convolucional profunda. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Los resultados de sus trabajos van en progresiva mejora. Mientras que el primer trabajo se considera la base y alcanza una precisi\'f3n de m\'e1s del 68%, los dos siguientes con el algoritmo 
+\f9\i k-means 
+\f7\i0 esf\'e9rico alcanzan precisiones del 74% y 75%. La primera implementaci\'f3n con la red neuronal convolucional les depar\'f3 un resultado del 73% de precisi\'f3n. Sin embargo, al aplicar un algoritmo de aumento de datos la precisi\'f3n alcanz\'f3 cerca del 79%. Finalmente implementaron el modelo de Piczak [6] (2015) con la misma base de datos. El resultado de este modelo fue del 73%. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 En la Figura 2-2 el punto rojo indica el resultado medio del modelo y las barras nos indican la desviaci\'f3n est\'e1ndar de la medida. Fij\'e1ndonos en la arquitectura basada en red neuronal convolucional vemos como, en el caso de no aplicar el algoritmo de aumento de datos (zona a la izquierda de la l\'ednea de puntos), la precisi\'f3n media es menor que en los modelos que emplean 
+\f9\i k-means 
+\f7\i0 esf\'e9rico. Sin embargo, la desviaci\'f3n est\'e1ndar de la precisi\'f3n es menor en el caso de la CNN ya que sus barras tienen un menor tama\'f1o en comparaci\'f3n con los modelos que emplean SKM. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 En el caso de aplicar un algoritmo de aumento de datos (zona a la derecha de la l\'ednea de puntos) vemos como la precisi\'f3n media de la CNN aumenta con respecto al modelo SKM. A pesar de esto, la desviaci\'f3n est\'e1ndar de la medida es mayor en el caso de la red neuronal convolucional, ya que sus barras ocupan un mayor tama\'f1o en comparaci\'f3n con el modelo que emplea 
+\f9\i k-means 
+\f7\i0 esf\'e9rico. 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.16.02.png \width12680 \height9580 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f8\b\fs32 \cf2 3.1.3 Espectrograma 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 Para obtener una representaci\'f3n tiempo-frecuencia tenemos que hacer la DFT de la se\'f1al cada cierto tiempo. En el eje de abscisas representamos el tiempo transcurrido y en el eje de ordenadas las frecuencias. El nivel de intensidad de esa frecuencia se representa en el espectrograma, donde las zonas m\'e1s oscuras indican mayor nivel de decibelios y las zonas m\'e1s claras menor nivel. En la Figura 3-3 tenemos un ejemplo de espectrograma.
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.17.00.png \width11100 \height7080 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f7\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+ \
+Este espectrograma representa el eje de ordenadas, es decir, las frecuencias, de manera lineal. Sin embargo, a veces queremos obtener informaci\'f3n en ciertas bandas de frecuencia. Para ello hacemos pasar el resultado de la FFT por un banco de filtros. Estos filtros pueden estar distribuidos de diversas maneras. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 La escala de Mel est\'e1 relacionada con la percepci\'f3n auditiva humana. Estudios como el de Stevens et al. [44] (1937) observan que el o\'eddo humano act\'faa como un filtro y que concentra su actividad en ciertas partes del espectro de frecuencia. Esta caracter\'edstica se aproxima por el banco de filtros de Mel (Figura 3-4), donde existen m\'e1s filtros y con bandas m\'e1s estrechas en las zonas de baja frecuencia que en las zonas de alta frecuencia, donde los filtros son pocos y de banda ancha. 
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.17.56.png \width12320 \height7340 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+
+\f7\fs29\fsmilli14667 Este procedimiento lo siguen distintos tipos de escala, como las bandas cr\'edticas (Zwicker et al. [45] (1980)) o la transformada 
+\f9\i Constant-Q 
+\f7\i0 (Brown et al. [46] (1991)). En este \'faltimo caso la escala de frecuencias no est\'e1 uniformemente espaciada, sino que su distribuci\'f3n es geom\'e9trica. Otro ejemplo son los filtros 
+\f9\i Gammatone 
+\f7\i0 (Patterson et al. [47] (1992)). Estos filtros son m\'e1s anchos que los de Mel, pero est\'e1n distribuidos de manera parecida: en las frecuencias bajas tenemos m\'e1s filtros que en las frecuencias altas. Se muestran en la Figura 3-5. 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.18.06.png \width10680 \height7380 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0 \cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 Una vez elegido el filtro tendremos un resultado distinto en el espectrograma. En la Figura 3-6 se muestra (a) la forma de onda del audio, (b) el espectrograma de frecuencia lineal, (c) el espectrograma de frecuencia de Mel y (d) el espectrograma de la transformada 
+\f9\i Constant-Q
+\f7\i0 . 
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.18.18.png \width12520 \height8480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+
+\f7\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+Estas representaciones visuales del audio pueden ser utilizadas como datos de entrada a nuestro clasificador. Sin embargo, como vimos en el cap\'edtulo anterior se suele aplicar un paso m\'e1s y se calculan unos valores num\'e9ricos, llamados coeficientes, para que sean estos los que se pasen como entrada al sistema y no la imagen del espectrograma completo. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Los coeficientes m\'e1s frecuentes a la hora de trabajar con audio son los coeficientes cepstrales a la frecuencia de Mel (MFCC) (Peltonen et al. [48] (2002), Valero et al. [49] (2012)). Para computar estos coeficientes tenemos que calcular el logaritmo de cada ventana de espectrograma a las que le hicimos la DFT, como vimos anteriormente. Seguidamente a cada ventana le aplicamos la Transformada Discreta del Coseno (Discrete Cosine Transform, DCT). Los valores de las amplitudes resultantes son los denominados coeficientes cepstrales a la frecuencia de Mel. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Normalmente se almacenan los 13 primeros MFCC de cada extracto de espectrograma, ya que los siguientes no contienen informaci\'f3n relevante sobre el audio. El conjunto de vectores de MFCC de todas las ventanas del audio es el que se pasa como par\'e1metro de entrada al modelo. En este caso los datos de entrada del modelo ser\'edan menos pesados si los comparamos computacionalmente con un espectrograma completo de un audio. A su vez existen m\'e1s alternativas en cuanto al c\'e1lculo de coeficientes se trata, como por ejemplo los coeficientes cepstrales 
+\f9\i Gammatone 
+\f7\i0 (GFCC) (Phan et al. [50] (2016), Valero et al. [51] (2012)). 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f8\b\fs29\fsmilli14667 \cf2 Cross-validation 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 La validaci\'f3n cruzada tiene el mismo objetivo que las capas de 
+\f9\i Dropout 
+\f7\i0 y 
+\f9\i BatchNormalization
+\f7\i0 , evitar el sobreajuste. M\'e9todos de 
+\f9\i cross-validation 
+\f7\i0 hay muchos, pero todos se basan en la misma idea. Hacen particiones del 
+\f9\i dataset 
+\f7\i0 en entrenamiento y test y entrena el modelo, todas las veces necesarias hasta que todas las muestras de la base de datos hayan sido tomadas como test. As\'ed nos aseguramos de que la precisi\'f3n del modelo no depende de la partici\'f3n aleatoria de datos que hayamos hecho, ya que todos los datos van a formar parte del entrenamiento y del test. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Uno de los algoritmos m\'e1s comunes para implementar validaci\'f3n cruzada es el llamado 
+\f9\i k-fold 
+\f7\i0 (Krishni [65] (2018)). Consiste en dividir la base de datos en 
+\f9\i k 
+\f7\i0 lotes de datos. El entrenamiento se realizar\'e1 con 
+\f9\i k
+\f7\i0 -1 lotes de datos y el test se har\'e1 con un lote de datos solo. Se guardan los resultados de precisi\'f3n y error de esa evaluaci\'f3n 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 y se repite el entrenamiento con un lote de test distinto y los restantes para entrenamiento. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 El algoritmo 
+\f9\i k-fold 
+\f7\i0 no tiene en cuenta el n\'famero de muestras de cada clase que existan en la base de datos total. Nosotros buscamos que la separaci\'f3n en datos de test y entrenamiento se haga de la manera m\'e1s homog\'e9nea posible. Para ello se implementa el algoritmo 
+\f9\i stratified k-fold
+\f7\i0 , que usaremos en nuestros experimentos. Este m\'e9todo s\'ed tiene en cuenta el n\'famero de muestras totales de cada clase y las separa seg\'fan el n\'famero de subdivisiones que le hayamos especificado. Un ejemplo visual lo podemos encontrar en la Figura 3-18. 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.20.13.png \width13140 \height5500 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f8\b\fs32 \cf2 4.3.3 Arquitectura propuesta 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 Nuestro modelo cuenta con tres capas convolucionales 2D, todas con la funci\'f3n de activaci\'f3n 
+\f9\i ReLu 
+\f7\i0 y las dos primeras cuentan con una capa de 
+\f9\i Max Pooling 
+\f7\i0 2D a su salida. Los filtros de estas capas son de tama\'f1o 5x5, la primera capa convolucional cuenta con 24 filtros y las dos \'faltimas con 48 filtros. Las capas de 
+\f9\i Max Pooling 
+\f7\i0 tienen un filtro de 4x2. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Tras esta primera mitad de arquitectura le sigue una capa 
+\f9\i Flatten 
+\f7\i0 seguida de una capa de 
+\f9\i Dropout
+\f7\i0 . Contin\'faa el modelo con una capa densamente conectada de 64 neuronas, tambi\'e9n seguida de una capa de 
+\f9\i Dropout 
+\f7\i0 y con la funci\'f3n de activaci\'f3n 
+\f9\i ReLu
+\f7\i0 . Finalmente se encuentra la capa de salida con 7 neuronas y funci\'f3n de activaci\'f3n 
+\f9\i softmax
+\f7\i0 . En la Figura 4-2 mostramos un esquema visual de nuestro primer modelo. 
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.21.35.png \width14960 \height6680 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+
+\f7\fs29\fsmilli14667 Finalmente decidimos los par\'e1metros para compilar el modelo. Como funci\'f3n de p\'e9rdida, tambi\'e9n llamada funci\'f3n de coste, elegimos 
+\f10\fs26\fsmilli13333 categorical_crossentropy 
+\f7\fs29\fsmilli14667 ya que estamos utilizando la funci\'f3n de p\'e9rdida 
+\f9\i cross-entropy 
+\f7\i0 para nuestro problema de clasificaci\'f3n con varias clases. La f\'f3rmula para calcular la p\'e9rdida en un clasificador con 
+\f9\i C 
+\f7\i0 clases la mostramos en la Ecuaci\'f3n 4-1. 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.21.23.png \width7160 \height2060 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+Para calcular la p\'e9rdida 
+\f9\i cross-entropy 
+\f7\i0 o 
+\f9\i CE 
+\f7\i0 tenemos: el valor de la clase real que le pasamos al modelo, 
+\f9\i y
+\fs18\fsmilli9333 \dn3 i
+\f7\i0\fs29\fsmilli14667 \up0 , que ser\'e1 1 si el audio pertenece a esa clase y 0 en los dem\'e1s casos; y el valor de la clase predicha por el modelo, 
+\f9\i y
+\fs18\fsmilli9333 \dn3 i\up13 pred
+\f7\i0\fs29\fsmilli14667 \up0 , que nos lo proporcionar\'e1 la capa 
+\f9\i softmax
+\f7\i0 . 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Esta capa devuelve a su salida la probabilidad de que el audio pertenezca a las distintas clases del modelo. En nuestro caso la capa 
+\f9\i softmax 
+\f7\i0 posee siete neuronas, una por cada clase (
+\f9\i C
+\f7\i0 =7), y para cada audio a clasificar esta capa mostrar\'e1 en cada neurona la probabilidad de que pertenezca a esa clase. Todas las probabilidades mostradas por la capa final suman la unidad. La clase que el modelo intuya como correcta tendr\'e1 un valor cercano a 1 en la neurona correspondiente y las dem\'e1s un valor cercano a 0. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Volviendo al c\'e1lculo del error, solo nos interesa averiguar 
+\f9\i CE 
+\f7\i0 para la clase a la que pertenece el audio, ya que el valor de 
+\f9\i y
+\fs18\fsmilli9333 \dn3 i 
+\f7\i0\fs29\fsmilli14667 \up0 en la multiplicaci\'f3n ser\'e1 1 y el resto 0. Se puede comprobar que cuando el valor de y
+\fs18\fsmilli9333 \dn3 i\up10 pred 
+\fs29\fsmilli14667 \up0 es cercano a 1, 
+\f9\i CE 
+\f7\i0 es cercano a 0. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Como funci\'f3n de reducci\'f3n del coste, tambi\'e9n llamado optimizador, elegimos Adam con un 
+\f9\i learning rate 
+\f7\i0 de 0.0001. Por \'faltimo, decidimos que se mida la precisi\'f3n del modelo. Esto nos devolver\'e1 en cada iteraci\'f3n del entrenamiento la precisi\'f3n del entrenamiento y validaci\'f3n y la p\'e9rdida en el entrenamiento y la validaci\'f3n. Mostramos la arquitectura en el C\'f3digo 4-5. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Para la definici\'f3n matem\'e1tica de precisi\'f3n podemos tomar como ejemplo el clasificador binario descrito en el cap\'edtulo anterior, cuya matriz de confusi\'f3n la mostramos en la Tabla 3-1. La precisi\'f3n es la relaci\'f3n entre los datos correctamente clasificados por el modelo y el total de datos, tanto correctos como incorrectos (Ecuaci\'f3n 4-2). 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Se trata de un porcentaje que puede resultar enga\'f1oso si no se tiene en cuenta otras medidas, como es el caso de la p\'e9rdida. La p\'e9rdida, como hemos visto antes, no se trata de un porcentaje. Su valor es la suma de los errores que el modelo ha cometido al clasificar y es la medida que autom\'e1ticamente el modelo intenta minimizar con la funci\'f3n reducci\'f3n de coste y el algoritmo de 
+\f9\i Backpropagation
+\f7\i0 . 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.21.54.png \width7640 \height1680 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f8\b\fs37\fsmilli18667 \cf2 4.4. Implementaci\'f3n del segundo modelo 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 Durante nuestra investigaci\'f3n para realizar el cap\'edtulo del estado del arte en esta memoria pudimos comprobar como muchas de las arquitecturas que se propon\'edan en las investigaciones ten\'edan cuatro capas convolucionales en vez de tres. Tambi\'e9n nos dimos cuenta de este detalle en los modelos propuestos para la competici\'f3n de 
+\f9\i Kaggle
+\f7\i0 , de los cuales muchos de ellos consiguieron buena puntuaci\'f3n en el reto. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Por eso decidimos implementar un segundo modelo con una arquitectura nueva. Nos basamos en el trabajo del 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 32 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Clasificaci\'f3n autom\'e1tica de sonidos utilizando aprendizaje m\'e1quina \dn3 33 
+\f1\fs24 \up0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page57image57322464.png \width8118 \height17 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 usuario de 
+\f9\i Kaggle 
+\f7\i0 Razar [62] (2018) para desarrollar esta arquitectura. Los pasos del preprocesamiento de los datos son los mismos que para el primer modelo, lo \'fanico que alteramos es la arquitectura. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Como hemos comentado, este modelo tiene cuatro capas convolucionales 2D, cada una con 32 filtros de tama\'f1o 4x10 y seguidas una capa de 
+\f9\i Batch Normalization
+\f7\i0 , una funci\'f3n de activaci\'f3n 
+\f9\i ReLu 
+\f7\i0 y una capa de 
+\f9\i Max Pooling 
+\f7\i0 2D con filtros 2x2. Contin\'faa con una capa 
+\f9\i Flatten
+\f7\i0 , otra densamente conectada de 64 neuronas, otra capa de 
+\f9\i Batch Normalization 
+\f7\i0 y la funci\'f3n de activaci\'f3n 
+\f9\i ReLu
+\f7\i0 . Finalmente tenemos la capa de salida como en el modelo anterior, con 7 neuronas y la funci\'f3n de activaci\'f3n 
+\f9\i softmax
+\f7\i0 . Como en el caso del modelo anterior mostramos un esquema visual de esta arquitectura en la Figura 4-3. Finalmente empleamos los mismos par\'e1metros del modelo anterior para la compilaci\'f3n de este modelo (C\'f3digo 4-6). 
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.22.36.png \width14840 \height5240 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f8\b\fs32 \cf2 \expnd0\expndtw0\kerning0
+5.1.2 Matriz de confusi\'f3n 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs29\fsmilli14667 \cf2 El entrenamiento nos dej\'f3 una copia de seguridad del modelo con los par\'e1metros que hac\'edan el error de validaci\'f3n m\'ednimo. Concretamente la mejor combinaci\'f3n de valores de pesos y sesgos se dio en la 
+\f9\i epoch 
+\f7\i0 n\'famero 73. Se consigui\'f3 un error de validaci\'f3n de 
+\f5\b 0.28129 
+\f7\b0 y una precisi\'f3n en la validaci\'f3n de 
+\f5\b 0.9141
+\f7\b0 . 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Estos resultados en el entrenamiento nos dejaron una buena impresi\'f3n. En primer lugar, la curva del error de validaci\'f3n no se separa apenas de la curva del error de entrenamiento, lo cual significa que se est\'e1 realizando un buen ajuste. En segundo lugar, el error de validaci\'f3n alcanza un valor m\'ednimo cercano a los valores de p\'e9rdida de validaci\'f3n y test de los diversos estudios vistos en el cap\'edtulo del estado del arte, alrededor de 0.2. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 A continuaci\'f3n, nos dispusimos a cargar el mejor modelo guardado para evaluarlo con los datos de test (C\'f3digo 5-2). Estos datos han estado apartados durante todo el entrenamiento, por lo tanto, va a ser la primera vez que nuestra red neuronal clasifique estos datos. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Esta evaluaci\'f3n de los datos de test nos proporcion\'f3 un resultado en la precisi\'f3n del 
+\f5\b 0.9172 
+\f7\b0 y un error del 
+\f5\b 0.2471
+\f7\b0 . Como vemos el valor de p\'e9rdida del test se acerca a\'fan m\'e1s al valor del estado del arte. Tras estos resultados en la evaluaci\'f3n nos disponemos a visualizar la matriz de confusi\'f3n del modelo, empleando para ello la librer\'eda importada de 
+\f9\i scikit-learn 
+\f7\i0 y la funci\'f3n que previamente definimos. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 La precisi\'f3n del modelo, anteriormente calculada, nos indica el porcentaje de evaluaciones correctas sobre el total de evaluaciones hechas por el modelo. Esta m\'e9trica es bastante significativa a la hora de visualizar globalmente el rendimiento del modelo, pero a veces es interesante investigar sobre las predicciones que realiza el modelo en cada clase. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Para ello calculamos la matriz de confusi\'f3n de nuestro modelo. En primer lugar, se visualiza la matriz de 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 confusi\'f3n con todas las muestras de test que se les han pasado al modelo (Tabla 5-1). En segundo lugar, normalizamos los resultados al n\'famero de muestras de test verdaderas por cada clase (Tabla 5-2). As\'ed conseguimos visualizar un resultado en tanto por uno dependiendo de las muestras de test observadas en cada clase. 
+\f1\fs24 \
+
+\f7\fs29\fsmilli14667 Como vemos nuestro modelo ha clasificado de manera id\'f3nea un 90% de las muestras de cada clase. Podemos destacar las 11 muestras de la clase 
+\f9\i drilling 
+\f7\i0 que han sido clasificadas por nuestro modelo como la clase 
+\f9\i jackhammer
+\f7\i0 . Ambos sonidos son parecidos, ruidos agudos de maquinaria, por lo que encontramos l\'f3gico la clasificaci\'f3n incorrecta de estas muestras. Sin embargo, apenas suponen el 9% de las muestras de la clase 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.27.24.png \width11320 \height16780 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb3 ME GUSTA LA FORMA DE MOSTRAR LAS ARQUITECTURA DE LOS MODELOS, COMO LOS EXPLICA, TAMBIEN ME GUSTARIA IMPLEMENTAR LA MATRIZ DE CONFUSION.\
+\cb4 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb4 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs37\fsmilli18667 \cf2 \cb1 Reconocimiento de Voz usando Redes Neuronales Artificiales Backpropagation y Coeficientes LPC 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs26\fsmilli13333 \cf2 Luis. A. Cruz-Beltr\'e1n
+\fs16 \up13 1 
+\fs26\fsmilli13333 \up0 and Marco. A. Acevedo-Mosqueda
+\fs16 \up13 1 
+\f1\fs24 \up0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs16 \cf2 \up8 1 
+\fs24 \up0 SEPI-Telecomunicaciones ESIME IPN Unidad Profesional \'93Adolfo L\'f3pez Mateos". Col. Lindavista, 07738, M\'e9xico. D. F\uc0\u8232 lcruzb06@ipn.mx, macevedo@ipn.mx 
+\f1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs26\fsmilli13333 \cf2 4.2 Preprocesamiento 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs26\fsmilli13333 \cf2 El objetivo de esta etapa es acondicionar la se\'f1al de entrada para que esta pueda ser procesada por la RNA, primero acotamos la se\'f1al de voz eliminando la parte inicial y final de la misma, que solo representan ruido para obtener la se\'f1al de voz a la cual le aplicaremos las Wavelets, como se ve en la Figura 4, se toma la subse\'f1al 
+\f9\i a[n] 
+\f7\i0 correspondiente a las bajas frecuencias de la se\'f1al de voz donde se localiza la mayor cantidad de energ\'eda de la misma, despreci\'e1ndose la subse\'f1al 
+\f9\i b[n] 
+\f7\i0 que corresponde a las altas frecuencias ya que es donde se encuentra la mayor cantidad de ruido de la se\'f1al (ruido ambiental y el ruido del canal telef\'f3nico). Obteniendo as\'ed una se\'f1al de voz compacta y filtrada con respecto a la original. Posteriormente se normaliza la se\'f1al de voz resultante, para finalmente extraer los coeficientes LPC de la se\'f1al, que servir\'e1n para el dise\'f1o de los patrones de entrenamiento de la RNA. 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.32.13.png \width8580 \height4640 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs26\fsmilli13333 \cf2 \expnd0\expndtw0\kerning0
+La etapa del preprocesamiento de la se\'f1al de voz consiste de los siguientes pasos, los 
+\f1\fs24 \
+
+\f7\fs26\fsmilli13333 cuales se observan en la Figura 2. \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b \cf2 Wavelets: 
+\f7\b0 Toda se\'f1al de voz en la Naturaleza se encuentra afectada por ruido, y la se\'f1al de voz del canal telef\'f3nico no es la excepci\'f3n. Por tal motivo se emplean las Wavelets para reducir este efecto. En este trabajo se propone emplear tres tipos de Wavelets las cuales son Haar, Coiflet y Daubechies. Observando que la mejor de ellas es la wavelet Daubechies debido a que, presenta el mayor porcentaje de compactaci\'f3n de energ\'eda de la subse\'f1al 
+\f9\i a
+\f7\i0 [
+\f9\i n
+\f7\i0 ] para cada uno de los veinticinco archivos. Esto permite eliminar la subse\'f1al 
+\f9\i b
+\f7\i0 [
+\f9\i n
+\f7\i0 ] de altas frecuencias. 
+\f1\fs24 \
+
+\f5\b\fs26\fsmilli13333 Normalizaci\'f3n: 
+\f7\b0 La normalizaci\'f3n consiste en ajustar todos los par\'e1metros a una sola escala para que al momento de ser utilizados por la RNA no causen problemas de estabilidad, en este caso la escala empleada se encuentra dada por los par\'e1metros de la funci\'f3n de activaci\'f3n de la RNA que es una tangente bipolar sigmoidal y trabaja con valores de [-1,1], por lo tanto cada uno de los 25 archivos que previamente fueron compactados y filtrados por medio de las Wavelets es normalizado a esta escala, como se observa en (10), donde los datos que se quieren normalizar se encuentran dentro del vector 
+\f9\i x
+\f7\i0 [
+\f9\i i
+\f7\i0 ], con i
+\f9\i =1
+\f7\i0 ,...,
+\f9\i n
+\f7\i0 . El procedimiento a seguir es el siguiente: 
+\f1\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls3\ilvl0
+\f7\fs26\fsmilli13333 \cf2 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
+a) \'a0Se calcula la media (
+\f9\i u
+\f7\i0 ) y la desviaci\'f3n est\'e1ndar (
+\f9\i \uc0\u963 
+\f7\i0 ) del vector 
+\f9\i x[n]
+\f7\i0 . 
+\f1\fs24 \uc0\u8232 \
+\ls3\ilvl0
+\f7\fs26\fsmilli13333 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
+b) \'a0Senormalizanlosdatosseg\'fanlarelaci\'f3n: 
+\f1\fs24 \uc0\u8232 
+\f9\i\fs21\fsmilli10667 x
+\f1\i0 &
+\f7 [
+\f9\i n
+\f7\i0 ] 
+\f1 = 
+\f9\i \up13 x
+\f7\i0 \up13 [
+\f9\i \up13 n
+\f7\i0 \up13 ]
+\f1 \up13 \uc0\u8722 \u956  
+\fs24 \up0 \uc0\u8232 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs21\fsmilli10667 \cf2 \dn3 \uc0\u963  
+\f7\fs26\fsmilli13333 \up0 (10) 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f7\fs26\fsmilli13333 \cf2 c) Se calculan el m\'e1ximo y el m\'ednimo del vector 
+\f9\i\fs21\fsmilli10667 \dn3 x
+\f1\i0 \dn3 &
+\f7 \dn3 [
+\f9\i \dn3 n
+\f7\i0 \dn3 ] 
+\fs26\fsmilli13333 \up0 , se divide por el de mayor valor absoluto y los datos normalizados caen dentro del intervalo 
+\f9\i [-1,1]. 
+\f1\i0\fs24 \
+\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb3 IMPLMENTAN UNA SEPARACION DE ALTAS Y BAJAS FRECUENCIAS PARA DIFERENCIAR DEL RUIDO AMBIENTAL ESTO TAMBIEN PODRIAMOS IMPLEMENTAR\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs53\fsmilli26667 \cf2 UNIVERSIDAD POLIT\'c9CNICA DE MADRID 
+\fs40 ESCUELA T\'c9CNICA SUPERIOR DE INGENIER\'cdA Y DISE\'d1O INDUSTRIAL 
+\fs42\fsmilli21333 Grado en Ingenier\'eda Electr\'f3nica Industrial y Autom\'e1tica 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs64 \cf2 TRABAJO FIN DE GRADO 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs48 \cf2 An\'e1lisis de la contaminaci\'f3n ac\'fastica mediante Inteligencia Artificial 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs48 \cf2 Autor: \'c1lvaro Vellella Ramos 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs37\fsmilli18667 \cf2 Tutora: 
+\fs24 \
+
+\fs37\fsmilli18667 Raquel Cedazo Le\'f3n Departamento de Ingenier\'eda El\'e9ctrica, Electr\'f3nica, Autom\'e1tica y F\'edsica Aplicada 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Madrid, septiembre 2022 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs74\fsmilli37333 \cf2 Cap\'edtulo 3 
+\fs96 F
+\fs69\fsmilli34667 UNDAMENTOS TE\'d3RICOS 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs48 \cf2 3.1. C
+\fs40 ONVOLUCI\'d3N 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 La convoluci\'f3n es la operaci\'f3n matem\'e1tica que permite a las CNN extraer las caracter\'edsticas de una imagen. Desde el punto de vista digital, una imagen es una matriz de dos dimensiones en la que cada elemento est\'e1 formado por uno o varios bytes, dependiendo del n\'famero de canales por el que est\'e9 compuesta la imagen. Por ejemplo, en el caso de una imagen a color el n\'famero de canales ser\'e1 de 3: un byte para el color rojo, otro para el verde y otro para el azul, mientras que una imagen en escala de grises tendr\'e1 \'fanicamente un canal. 
+\fs24 \
+
+\fs32 La operaci\'f3n de convoluci\'f3n discreta es una transformaci\'f3n en la que el valor del p\'edxel resultante es una combinaci\'f3n lineal de los valores de los p\'edxeles vecinos en la imagen. Esta transformaci\'f3n se puede definir por dos matrices: la imagen y la matriz de coeficientes, tambi\'e9n conocida como m\'e1scara de convoluci\'f3n, filtro de convoluci\'f3n o kernel, la cual define los pesos que se aplicar\'e1n a cada p\'edxel de la imagen y sus p\'edxeles vecino (Figura 3-1). Los filtros de convoluci\'f3n tendr\'e1n unas dimensiones mucho menores a las de la imagen, tomando normalmente valores impares de 3x3, 5x5 o 7x7 para anclar el centro del filtro a cada p\'edxel de la imagen. 
+\fs24 \
+
+\fs32 Como resultado de este proceso iterativo se obtiene una imagen de menores dimensiones a la original, cuyas caracter\'edsticas se ven realzadas dependiendo del tipo de filtro utilizado. 
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.39.57.png \width13480 \height8500 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs48 \cf2 3.2. R
+\fs40 EDES NEURONALES CONVOLUCIONALES 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Las CNN explotan la operaci\'f3n de convoluci\'f3n en im\'e1genes para extraer las caracter\'edsticas de las im\'e1genes de entrada. Estas redes tienen una o varias capas convolucionales compuestas por un n\'famero determinado de filtros convolucionales. Cada filtro lleva a cabo la operaci\'f3n de convoluci\'f3n sobre la imagen de entrada. Al principio, los pesos de cada filtro tendr\'e1n unos valores de inicializaci\'f3n o aleatorios que, a medida que se entrena la red, converger\'e1n en los valores \'f3ptimos que permitan detectar las distintas caracter\'edsticas que permiten clasificar la imagen adecuadamente. 
+\fs24 \
+
+\fs32 Cada filtro se especializar\'e1 en detectar una caracter\'edstica concreta y, a medida que se a\'f1adan capas convolucionales, las caracter\'edsticas detectadas por cada capa superior tendr\'e1n cada vez una mayor complejidad, ya que utilizan las caracter\'edsticas m\'e1s simples extra\'eddas en las capas anteriores. 
+\fs24 \
+
+\fs32 Normalmente, las capas convolucionales se intercalan con capas de agrupaci\'f3n que reducen la dimensionalidad de las im\'e1genes de salida. Estas capas agrupan los valores de varios p\'edxeles contiguos en un \'fanico p\'edxel siguiendo una norma determinada. Una de las m\'e1s utilizadas son las capas 
+\f9\i max-pooling 
+\f1\i0 o de agrupaci\'f3n m\'e1xima, las cuales mantienen el valor m\'e1ximo de un conjunto de p\'edxeles en el nuevo p\'edxel. A medida que se reduce las dimensiones de las matrices de caracter\'edsticas, se pueden a\'f1adir m\'e1s filtros en la siguiente capa convolucional. 
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.40.10.png \width13380 \height8140 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 En la Figura 3-2 se puede observar el proceso de extracci\'f3n de caracter\'edsticas de una CNN a trav\'e9s de las capas de convoluci\'f3n y agrupaci\'f3n. Mientras que algunos filtros se especializan en detectar bordes, otros lo hacen para detectar ciertas texturas o contrastes, obteniendo las representaciones de las distintas caracter\'edsticas que componen la imagen. A medida que se aplican las capas de agrupaci\'f3n, las dimensiones de la imagen se reducen. 
+\fs24 \
+
+\fs32 Una vez extra\'eddas todas las matrices de caracter\'edsticas, \'e9stas se aplanan en un \'fanico vector mediante una capa de aplanamiento o 
+\f9\i flatten
+\f1\i0 , o mediante una capa de agrupaci\'f3n global, la cual agrupa todos los p\'edxeles de las im\'e1genes de caracter\'edsticas en un \'fanico valor, como puede ser el valor m\'e1ximo. 
+\fs24 \
+
+\fs32 Finalmente, se a\'f1aden una o varias capas de neuronas completamente conectadas para llevar a cabo la tarea de clasificaci\'f3n (Figura 2-2). Se llaman as\'ed debido a que cada neurona est\'e1 conectada a todas las salidas de la capa anterior. La salida de cada neurona es el resultado de la suma ponderada de todas sus entradas. La ponderaci\'f3n de cada entrada viene definida por el peso que se le asigna a cada conexi\'f3n (Figura 3-3). Adem\'e1s de esto, cada neurona tendr\'e1 tambi\'e9n un t\'e9rmino independiente conocido como 
+\f9\i bias 
+\f1\i0 o sesgo, actuando como un modelo de regresi\'f3n lineal. Al resultado de esta operaci\'f3n se le aplica una funci\'f3n no lineal, llamada funci\'f3n de activaci\'f3n, que evita que todo el conjunto de neuronas colapse como si de una \'fanica neurona se tratase (debido a que la suma de varias deformaciones lineales es equivalente a una \'fanica deformaci\'f3n lineal). A medida que se entrena la red, las neuronas van ajustando estos valores para obtener las salidas que permitan su clasificaci\'f3n final. 
+\fs24 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.40.25.png \width11540 \height7280 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f1\fs32 \cf2 \expnd0\expndtw0\kerning0
+La \'faltima capa neuronal de la red ser\'e1 la capa de salida, la cual debe tener el mismo n\'famero de neuronas que clases. La salida de cada neurona ser\'e1 la predicci\'f3n de la red para su respectiva clase. \
+
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs42\fsmilli21333 \cf2 3.2.1. E
+\fs34\fsmilli17333 NTRENAMIENTO
+\fs42\fsmilli21333 : P
+\fs34\fsmilli17333 AR\'c1METROS E 
+\fs42\fsmilli21333 H
+\fs34\fsmilli17333 IPERPAR\'c1METROS 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Adem\'e1s de la arquitectura, hay otros dos conjuntos de elementos que definen la configuraci\'f3n de una red neuronal, estos son los par\'e1metros e hiperpar\'e1metros. 
+\fs24 \
+
+\fs32 Los par\'e1metros de una red se corresponden con aquellos valores que definen el comportamiento de \'e9sta. Se pueden diferenciar dos tipos de par\'e1metros: los que son entrenables, como son los pesos y sesgos de las neuronas o los pesos de las m\'e1scaras de convoluci\'f3n, y los no entrenables, como algunos valores que se utilizan en capas de normalizaci\'f3n
+\fs21\fsmilli10667 \up10 12
+\fs32 \up0 . Los par\'e1metros entrenables son aquellos cuyo valor se modifica o ajusta durante el entrenamiento, mientras que los no entrenables se mantienen constantes una vez calculados. Estos par\'e1metros se pueden contar en miles para redes simples, millones e incluso miles de millones para los modelos m\'e1s complejos. 
+\fs24 \
+
+\fs32 Los hiperpar\'e1metros de una red son los par\'e1metros ajustables que permiten controlar el proceso de entrenamiento del modelo. Por ejemplo, en una CNN algunos de estos hiperpar\'e1metros pueden ser el n\'famero de capas convolucionales de la red, la cantidad o las dimensiones de los kernel, el tipo de agrupaci\'f3n que se aplica, el n\'famero de neuronas ocultas, etc. La correcta elecci\'f3n de estos hiperpar\'e1metros influir\'e1 de manera significativa en el rendimiento de la red. Desafortunadamente, el proceso de optimaci\'f3n de la configuraci\'f3n de estos hiperpar\'e1metros suele ser manual y muy costoso computacionalmente, ya que requiere de prueba y error. 
+\fs24 \
+
+\fs32 Adem\'e1s de los hiperpar\'e1metros que definen la arquitectura de la red, tambi\'e9n est\'e1n los que configuran el proceso de entrenamiento, como son las funciones de p\'e9rdida, optimizaci\'f3n y activaci\'f3n, la tasa de aprendizaje o el tama\'f1o del lote. 
+\fs24 \
+
+\fs32 El entrenamiento de una CNN se basa en el aprendizaje supervisado. Es decir, la red necesita un conjunto de datos etiquetados representativo que le permita evaluar sus predicciones para reajustar sus par\'e1metros y conseguir as\'ed resultados m\'e1s precisos. Las funciones de p\'e9rdida o de coste son las encargadas de evaluar la desviaci\'f3n entre las predicciones de la red para cada entrada y los valores reales. El error obtenido se tendr\'e1 en cuenta para la autocorrecci\'f3n de los par\'e1metros que tuvieron influencia en esa desviaci\'f3n. Algunas de las funciones de p\'e9rdida m\'e1s comunes son el error cuadr\'e1tico medio, el error absoluto o el error absoluto escalar. 
+\fs24 \
+
+\fs32 En tareas de clasificaci\'f3n multiclase en las que una entrada s\'f3lo puede pertenecer a una de muchas categor\'edas posibles, es com\'fan utilizar la funci\'f3n de p\'e9rdida de entrop\'eda cruzada categ\'f3rica (
+\f9\i categorical cross-entropy
+\f1\i0 ). Esta funci\'f3n est\'e1 dise\'f1ada para cuantificar la diferencia entre dos funciones de probabilidad, por lo que es adecuada para aquellos casos en los que, aunque la predicci\'f3n ha sido incorrecta, la probabilidad obtenida se ha quedado cerca del valor real. Adem\'e1s, su derivada es sencilla, lo que facilita los c\'e1lculos computacionales y mejora el rendimiento del entrenamiento. 
+\fs24 \
+
+\fs32 El objetivo del entrenamiento es minimizar la funci\'f3n de coste encontrando los par\'e1metros entrenables adecuados y asegurando, al mismo tiempo, una buena generalizaci\'f3n. El reajuste de estos par\'e1metros se lleva a cabo mediante un algoritmo num\'e9rico llamado 
+\f9\i backpropagation
+\f1\i0 . La funci\'f3n de optimizaci\'f3n es la encargada de generar valores de los par\'e1metros cada vez mejores. Su funcionamiento se basa en calcular el gradiente de la funci\'f3n de coste (derivada parcial) por cada par\'e1metro de la red. Como lo que se quiere es minimizar el error, los par\'e1metros se modificar\'e1n en la direcci\'f3n negativa del gradiente. De cara a agilizar la convergencia de la funci\'f3n de coste hacia su m\'ednimo, el vector de gradiente se multiplica por un factor denominado tasa de aprendizaje (
+\f9\i Learning Rate
+\f1\i0 ) [52]. 
+\fs24 \
+
+\fs32 El descenso de gradiente es un algoritmo iterativo, que comienza desde un punto aleatorio en una funci\'f3n y viaja por su pendiente en peque\'f1os pasos hasta que alcanza un m\'ednimo. Este algoritmo es \'fatil en los casos en los que no se pueden encontrar los puntos \'f3ptimos al igualar la pendiente de la funci\'f3n a 0, como es el caso de las funciones de coste en redes neuronales. Sin embargo, tiene la limitaci\'f3n de que puede converger en un m\'ednimo local y no absoluto. 
+\fs24 \
+
+\fs32 El c\'e1lculo de la derivada parcial de la funci\'f3n de coste respecto de cada par\'e1metro de la red para cada entrada del conjunto de datos es inviable debido a la enorme cantidad de ambos. La funci\'f3n Stochastic Gradient Descent (SGD) limita el c\'e1lculo de la derivada a tan solo una observaci\'f3n aleatoria por cada iteraci\'f3n, aunque existen algunas variaciones como mini-batch SGD que seleccionan varias observaciones en vez de una. 
+\fs24 \
+
+\fs32 La funci\'f3n 
+\f9\i Momentum 
+\f1\i0 guarda un registro de la media de los antiguos vectores de descenso del gradiente para acelerar el descenso en aquellas direcciones que son similares a las anteriores. 
+\fs24 \
+
+\fs32 Las funciones AdaGrad (
+\f9\i Adaptive Gradient Algorithm
+\f1\i0 ) y RMSProp (
+\f9\i Root Mean Square Propagation
+\f1\i0 ) adaptan la tasa de aprendizaje de la red a cada par\'e1metro. En el caso de AdaGrad, las tasas de aprendizaje para cada par\'e1metro se calculan con la ra\'edz cuadrada del sumatorio de los valores anteriores al cuadrado, mientras que RMSProp utiliza una media ponderada exponencial. 
+\fs24 \
+
+\fs32 Por \'faltimo, el algoritmo Adam (
+\f9\i Adaptive moment estimation
+\f1\i0 ) es una combinaci\'f3n de las funciones de AdaGrad y RMSProp. Adam mantiene una tasa de aprendizaje para cada par\'e1metro y, adem\'e1s de calcular RMSProp, cada factor de entrenamiento tambi\'e9n se ve afectado por la media del 
+\f9\i momentum 
+\f1\i0 del gradiente. 
+\fs24 \
+
+\fs32 El entrenamiento de una red neuronal es un proceso iterativo en el que cada dato del conjunto de entrenamiento pasa varias veces por este proceso de optimizaci\'f3n. Se conoce como \'e9pocas o 
+\f9\i epoch 
+\f1\i0 al n\'famero de veces que todo el conjunto de datos pasa por este proceso. Cuando el conjunto de datos es muy grande, se suele dividir en lotes de menor tama\'f1o, tambi\'e9n conocido como 
+\f9\i batch
+\f1\i0 . Una iteraci\'f3n ser\'eda cada vez que un 
+\f9\i batch 
+\f1\i0 pasa por el proceso de optimizaci\'f3n. Tanto el n\'famero de 
+\f9\i epochs 
+\f1\i0 que se entrena la red, como el tama\'f1o del 
+\f9\i batch 
+\f1\i0 empleado se consideran tambi\'e9n hiperpar\'e1metros. 
+\fs24 \
+
+\fs32 Otro hiperpar\'e1metro del que ya se ha hablado en el apartado anterior son las funciones de activaci\'f3n. Estas funciones se corresponden con las deformaciones no lineales que se aplican a las salidas de cada neurona. Su elecci\'f3n tiene un gran impacto en la capacidad de aprendizaje de la red neuronal. En general, una buena funci\'f3n de activaci\'f3n cumple las siguientes caracter\'edsticas [53]: 
+\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa320\partightenfactor0
+\ls4\ilvl0
+\fs32 \cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Fuga de gradiente: como se ha visto anteriormente, las redes neuronales se entrenan utilizando el descenso de gradiente y el algoritmo de 
+\f9\i backpropagation
+\f1\i0 , lo que quiere decir que el gradiente de cada capa afecta a la capa anterior. Si el gradiente de la funci\'f3n de activaci\'f3n es cercano a cero, perjudicar\'e1 el entrenamiento de la red neuronal, pues todos los par\'e1metros de las capas anteriores no se ver\'e1n casi afectados por la funci\'f3n de optimizaci\'f3n. \uc0\u8232 \
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Centrado en cero: la funci\'f3n de activaci\'f3n debe ser sim\'e9trica en cero, de esta manera, los gradientes no se desplazan hac\'eda una direcci\'f3n particular. \uc0\u8232 \
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Gasto computacional: las funciones de activaci\'f3n se aplican despu\'e9s de cada capa y deben calcularse millones de veces, por lo que una buena funci\'f3n de activaci\'f3n debe ser econ\'f3mica computacionalmente. \uc0\u8232 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 34 
+\fs24 \
+
+\fs32 \'95 Diferenciable: el c\'e1lculo del descenso de gradiente requiere de la derivaci\'f3n de la funci\'f3n de activaci\'f3n, luego necesariamente tienen que ser diferenciables. 
+\fs24 \
+
+\fs32 Las funciones de activaci\'f3n Sigmoide (
+\f9\i Sigmoid
+\f1\i0 ) y Tangente hiperb\'f3lica (Tanh) se utilizan para clasificadores binarios. Un inconveniente de estas funciones es que, para valores muy peque\'f1os o demasiado grandes, la derivada converge hacia 0, lo que conlleva un problema de fuga de gradiente. Adem\'e1s, no son muy econ\'f3micas computacionalmente debido a las operaciones exponenciales. 
+\fs24 \
+
+\fs32 La diferencia entre estas dos funciones es que Tanh est\'e1 centrada en cero y tiene un rango de entre -1 y 1, mientras que la funci\'f3n sigmoide est\'e1 centrada en 0,5 y devuelve valores normalizados entre 0 y 1 (Figura 3-4). 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs29\fsmilli14667 \cf2 Figura 3-4. 
+\f1\b0 Funciones de activaci\'f3n Sigmoide, Tanh y ReLU [54]. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 La funci\'f3n de activaci\'f3n m\'e1s popular en el aprendizaje profundo es la ReLU (
+\f9\i Rectified Linear Units
+\f1\i0 ). Esta funci\'f3n descarta cualquier valor negativo y mantiene los positivos. Tiene una mejor propagaci\'f3n del gradiente en comparaci\'f3n con las anteriores. Adem\'e1s, es invariante en escala y es una funci\'f3n muy r\'e1pida de calcular. Sin embargo, no est\'e1 centrada en 0 ni tampoco es diferenciable en 0, aunque s\'ed en el resto de valores. Otro inconveniente que tiene es que, al no tener un l\'edmite superior, la salida se puede hacer excesivamente grande, dejando a estos nodos inutilizables. 
+\fs24 \
+
+\fs32 Finalmente, para clasificaciones multiclase es habitual utilizar la funci\'f3n de activaci\'f3n 
+\f9\i Softmax
+\f1\i0 . Esta funci\'f3n transforma las salidas de una capa neuronal en forma de probabilidades, de manera que el sumatorio de todas las probabilidades de las salidas es 1. Se utiliza en la \'faltima capa de clasificaci\'f3n. 
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page39image57311856.png \width8503 \height3045 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 35 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs48 \cf2 3.3. S
+\fs40 OBREAJUSTE 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Cada vez que se entrena una red neuronal, existe el riesgo de que los par\'e1metros de la red se ajusten demasiado a los datos del entrenamiento. Un buen modelo es aquel que consigue generalizar de manera adecuada la informaci\'f3n proporcionada por los datos del conjunto de entrenamiento, de manera que sea capaz de hacer predicciones precisas cuando se introducen nuevos datos que no ha visto antes. 
+\fs24 \
+
+\fs32 Normalmente, se utilizan dos conjuntos de datos a la hora de entrenar un modelo, estos son el conjunto de entrenamiento y el de validaci\'f3n. El conjunto de entrenamiento contiene los datos con los que se va a entrenar la red, mientras que el conjunto de validaci\'f3n se utiliza \'fanicamente para que el modelo haga predicciones, sin reajustar los par\'e1metros de la red. Los datos de estos conjuntos deben ser independientes y nunca deben mezclarse, ya que validar la red con un dato con el que ha sido entrenada no proporciona una valoraci\'f3n objetiva de su rendimiento. 
+\fs24 \
+
+\fs32 La manera de evaluar el rendimiento una red neuronal es mediante las curvas de aprendizaje (Figura 3-5). \'c9stas se componen de la tasa de acierto de las predicciones de la red (
+\f9\i accuracy
+\f1\i0 ) y del valor obtenido de la funci\'f3n de p\'e9rdida para cada conjunto (
+\f9\i loss
+\f1\i0 ). 
+\f5\b\fs29\fsmilli14667 Figura 3-5. 
+\f1\b0 Efecto del sobreajuste en las curvas de aprendizaje [55]. 
+\fs24 \
+
+\fs32 Cuando un modelo es demasiado simple, es posible que no tenga los recursos necesarios para ajustarse a los datos de entrenamiento y hacer predicciones precisas. En estos casos, por m\'e1s que se entrene la red, aunque las curvas de aprendizaje para ambos conjuntos coincidan, \'e9sta no consigue alcanzar una buena precisi\'f3n para ninguno de los conjuntos, qued\'e1ndose estancada en un valor intermedio, al igual que la curva de la funci\'f3n de p\'e9rdida. Cuando sucede esto, es lo que se conoce como subajuste. 
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page40image57281584.jpg \width17085 \height8625 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 36 
+\fs24 \
+
+\fs32 Normalmente, este problema se soluciona aumentando la complejidad de la red. Es decir, a\'f1adiendo un mayor n\'famero de filtros, neuronas o capas. 
+\fs24 \
+
+\fs32 No se debe confundir el subajuste con aquellos casos en los que la red no est\'e1 aprendiendo y obtiene predicciones aleatorias. Cuando hay un problema de subajuste, la red aprende hasta que sus limitaciones lo permiten, y ambas curvas convergen en un valor distinto a la probabilidad de acertar lanzando predicciones aleatorias, mientras que cuando la red no est\'e1 aprendiendo, los valores de la curva de precisi\'f3n siempre estar\'e1n en torno al valor de dicha probabilidad. 
+\fs24 \
+
+\fs32 Por el contrario, cuando la tasa de aciertos para el conjunto de entrenamiento es considerablemente mayor que la del conjunto de validaci\'f3n (Figura 3-6), es una se\'f1al de que el aprendizaje de la red se est\'e1 ajustando demasiado a los datos del entrenamiento y no est\'e1 siendo capaz de generalizar las caracter\'edsticas de estos datos para hacer predicciones precisas sobre otros nuevos. Este problema es lo que se conoce como sobreajuste. En la Figura 3-6 se muestra un ejemplo de los problemas de subajuste y sobreajuste para un modelo sencillo de clasificaci\'f3n. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs29\fsmilli14667 \cf2 Figura 3-6. 
+\f1\b0 Subajuste y sobreajuste de un modelo de clasificaci\'f3n [56]. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Los problemas de sobreajuste es algo com\'fan a la hora de entrenar una red neuronal. En algunos casos se puede solucionar reduciendo la complejidad de la red, aunque la forma m\'e1s efectiva de evitarlo es tener un conjunto de entrenamiento lo m\'e1s amplio y representativo posible. Pero si por lo contrario se cuenta con un conjunto de datos limitado, existen diversas estrategias que permiten generalizar el aprendizaje de la red, como el aumento de datos (
+\f9\i data augmentation
+\f1\i0 ) o las t\'e9cnicas de regularizaci\'f3n. 
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page41image57476112.jpg \width9052 \height3264 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 37 
+\fs24 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls5\ilvl0
+\f5\b\fs48 \cf2 \kerning1\expnd0\expndtw0 {\listtext	.	}\expnd0\expndtw0\kerning0
+3.4. C
+\fs40 ARACTER\'cdSTICAS DEL SONIDO 
+\f1\b0\fs24 \uc0\u8232 
+\fs32 El sonido es una onda mec\'e1nica longitudinal que se propaga a trav\'e9s de un medio el\'e1stico, como es el aire. Se trata de un transporte de energ\'eda sin transporte de materia. 
+\fs24 \uc0\u8232 
+\fs32 Se produce cuando un cuerpo vibra y transmite dichas vibraciones al medio circundante en forma de ondas sonoras. \'c9stas se desplazan de forma expansiva a una velocidad determinada que depende de las condiciones del medio de propagaci\'f3n (en el aire, en condiciones normales de presi\'f3n y temperatura, es de aproximadamente 340 m/s.), y pueden ser absorbidas o rebotar en los distintos tipos de superficies que se encuentren a su paso, logrando diferentes efectos de eco o de distorsi\'f3n [59]. 
+\fs24 \uc0\u8232 
+\fs32 En el aire, el fen\'f3meno de propagaci\'f3n se debe a la puesta en vibraci\'f3n de las mol\'e9culas pr\'f3ximas al elemento vibrante, que a su vez transmiten el movimiento a las mol\'e9culas vecinas, y as\'ed sucesivamente. La vibraci\'f3n de las mol\'e9culas de aire provoca una variaci\'f3n de la presi\'f3n atmosf\'e9rica, es decir, el paso de una onda sonora por el aire produce una onda de presi\'f3n. Esta variaci\'f3n de la presi\'f3n se denomina presi\'f3n ac\'fastica 
+\fs24 \uc0\u8232 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 39 
+\fs24 \
+
+\fs32 o presi\'f3n sonora, y se define como la diferencia entre la presi\'f3n instant\'e1nea y la presi\'f3n atmosf\'e9rica en un instante dado [60] (Figura 3-7). 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs29\fsmilli14667 \cf2 Figura 3-7. 
+\f1\b0 Presi\'f3n ac\'fastica [60]. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Al igual que cualquier onda en f\'edsica, el sonido tiene tres caracter\'edsticas fundamentales: amplitud, frecuencia y composici\'f3n arm\'f3nica, lo que en ac\'fastica se denomina: intensidad, tono y timbre, respectivamente. 
+\fs24 \
+
+\fs32 \'95 
+\f5\b Intensidad
+\f1\b0 : es lo que se conoce como volumen. Hace referencia a la amplitud de la onda sonora y se relaciona con la cantidad de energ\'eda transmitida. Se mide en decibelios (dB). 
+\fs24 \
+
+\fs32 \'95 
+\f5\b Tono
+\f1\b0 : hace referencia a la frecuencia de la onda sonora. Es el n\'famero de oscilaciones por segundo y se mide en hercios (Hz). Los tonos graves se relacionan con las frecuencias bajas y los agudos, con las altas. El ser humano es capaz de escuchar sonidos con tonos comprendidos entre los 20 y 20.000 Hz 
+\fs24 \
+
+\fs32 \'95 
+\f5\b Timbre
+\f1\b0 : es la cualidad que permite distinguir dos sonidos de igual frecuencia e intensidad emitidos por distintas fuentes. El sonido, normalmente, no es una \'fanica onda de una frecuencia concreta, sino que est\'e1 compuesto por varias ondas de frecuencias distintas superpuestas. La onda principal se le conoce como fundamental, y el resto de las ondas acopladas tienen el nombre de arm\'f3nicos [38]. 
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page44image57212560.jpg \width13695 \height8745 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 40 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs42\fsmilli21333 \cf2 3.4.1. N
+\fs34\fsmilli17333 IVELES SONOROS
+\fs42\fsmilli21333 : 
+\fs34\fsmilli17333 EL DECIBELIO 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Las presiones ac\'fasticas a las cuales es sensible el o\'eddo humano var\'edan en un intervalo muy grande. El umbral inferior de la audici\'f3n humana es de 2 \'b7 10-5 Pa, mientras que el umbral m\'e1ximo es de alrededor de 20 Pa. Adem\'e1s, el comportamiento del o\'eddo humano se asemeja m\'e1s a una funci\'f3n logar\'edtmica que a una lineal [60]. Es por estos motivos por lo que resulta m\'e1s conveniente utilizar una escala logar\'edtmica en lugar de una lineal para medir el nivel de presi\'f3n sonora. 
+\fs24 \
+
+\fs32 El nivel de presi\'f3n sonora L se define por la siguiente expresi\'f3n: 
+\fs24 \
+
+\f11\fs32 \uc0\u55349 \u56413 
+\f1\fs24 \up10 2 
+\f11\fs32 \up0 \uc0\u55349 \u56413 
+\f1  
+\f11 \uc0\u55349 \u56383 
+\fs24 \dn6 \uc0\u55349 \u56413 
+\f1  
+\fs32 \up0 =10\'b7log
+\f11 \dn22 \uc0\u55349 \u56413 
+\f1\fs24 \dn11 2 
+\fs32 \up0 =20\'b7log
+\f11 \dn22 \uc0\u55349 \u56413 
+\f1  
+\fs24 \up0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f11 \cf2 \uc0\u55349 \u56412 \u55349 \u56412 
+\f1  \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs29\fsmilli14667 \cf2 Figura 3-8. 
+\f1\b0 Nivel de presi\'f3n sonora. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 Donde 
+\f11 \uc0\u55349 \u56413 
+\f1  es la presi\'f3n ac\'fastica de la onda sonora y 
+\f11 \uc0\u55349 \u56413 
+\fs24 \dn6 \uc0\u55349 \u56412 
+\f1  
+\fs32 \up0 es el valor de referencia. El nivel de presi\'f3n sonora L se expresa en decibelios (dB). 
+\fs24 \
+
+\fs32 Generalmente, se toma el valor de la presi\'f3n ac\'fastica que representa el umbral inferior de la audici\'f3n humana (
+\fs29\fsmilli14667 2 \'b7 10
+\fs21\fsmilli10667 \up10 \uc0\u8722 5 
+\fs32 \up0 Pa) como valor de referencia. Se habla entonces de decibelios de nivel de presi\'f3n sonora (Sound Pressure Level, dB SPL). Sin embargo, para sistemas digitales, este valor de referencia es generalmente el valor m\'e1ximo disponible que puede recoger el dispositivo. Se habla de decibelios a escala completa (Full Scale, dBFS). 
+\fs24 \
+
+\fs32 En el caso de un micr\'f3fono digital, la m\'e1xima intensidad sonora que puede medir se corresponder\'e1 con los 0 dBFS. Por lo tanto, aquellas intensidades que superen este umbral se registrar\'e1n tambi\'e9n como 0 dBFS, y las inferiores a \'e9l tomar\'e1n valores negativos, siendo los m\'e1s alejados del cero los menos intensos. 
+\fs24 \
+
+\fs32 En la escala SPL, el sonido audible m\'e1s bajo se corresponder\'eda con un valor de 0 dB SPL, un aumento del doble de la energ\'eda de la onda sonora se traducir\'eda en un incremento del nivel de presi\'f3n sonora de 3 dB, y si \'e9sta aumenta en un factor de 10, ser\'eda un incremento de 10 dB en la escala logar\'edtmica. 
+\fs24 \
+
+\fs32 Para hacerse una idea de los valores de esta escala, la intensidad del sonido percibida en una biblioteca se corresponder\'eda a un valor de 40 dB aproximadamente, una conversaci\'f3n normal rondar\'eda los 60 dB, un restaurante ruidoso, en torno a 90 dB, el interior de una discoteca estar\'eda a unos 110 dB y la explosi\'f3n de un globo, 150 dB. 
+\fs24 \
+
+\fs32 Sin embargo, la intensidad percibida de las ondas ac\'fasticas emitidas por la fuente sonora se va atenuando a medida que aumenta la distancia a \'e9sta. En el caso de una propagaci\'f3n esf\'e9rica desde una fuente puntual, como puede ser un disparo o el ladrido 
+\fs24 \
+
+\fs32 41 
+\fs24 \
+
+\fs32 de un perro, al doblar la distancia, el nivel de presi\'f3n sonora disminuye en 6 dB, y en una propagaci\'f3n cil\'edndrica desde una fuente lineal, como puede ser una carretera, doblar la distancia supone una p\'e9rdida de 3 dB [60]. 
+\fs24 \
+
+\fs32 Adem\'e1s de la distancia, hay otros factores que tambi\'e9n aten\'faan la intensidad de la onda sonora, como la absorci\'f3n del aire. Debido a que el aire no es un gas de densidad homog\'e9nea, ni est\'e1 en absoluto reposo, existe una atenuaci\'f3n debida a la transformaci\'f3n de parte de la energ\'eda ac\'fastica en calor. Esta atenuaci\'f3n depende de la frecuencia del sonido, de la temperatura y de la humedad del aire. Cuanto mayor es la frecuencia, mayor es la atenuaci\'f3n experimentada [60]. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs42\fsmilli21333 \cf2 3.4.2. E
+\fs34\fsmilli17333 XTRACCI\'d3N DE CARACTER\'cdSTICAS DEL SONIDO 
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 La se\'f1al digital de audio se obtiene de la discretizaci\'f3n de la onda de presi\'f3n sonora descrita en los apartados anteriores a una determinada frecuencia de muestreo. El valor de cada muestra se corresponde con la suma de las amplitudes de todos los arm\'f3nicos que componen la onda en ese instante y, aunque esta representaci\'f3n del sonido tiene algunas ventajas para su tratamiento digital, no aporta demasiada informaci\'f3n de las caracter\'edsticas del sonido. 
+\fs24 \
+
+\fs32 El conjunto de datos que se emplear\'e1 para entrenar la red, as\'ed como las muestras de sonido que se tomar\'e1n posteriormente, tienen un formato de archivo de audio (WAV). Sin embargo, el modelo de CNN que se emplear\'e1 en este proyecto est\'e1 dise\'f1ado para recibir im\'e1genes como entrada. Esto hace que se requiera de un m\'e9todo que permita extraer las caracter\'edsticas de la se\'f1al de audio y representarlas en una imagen que la red pueda interpretar, esto es, un espectrograma. 
+\fs24 \
+
+\fs32 Los espectrogramas son una representaci\'f3n visual de las variaciones de frecuencia e intensidad del sonido a lo largo de un periodo de tiempo. Existen diferentes t\'e9cnicas de extracci\'f3n y representaci\'f3n las de caracter\'edsticas del sonido, una de ellas y la que se utilizar\'e1 en este proyecto es el espectrograma de log-Mel (Figura 3-9). 
+\fs24 \
+
+\fs32 Para descomponer la se\'f1al en cada una de las frecuencias individuales y amplitud que la conforman se debe aplicar la transformada de Fourier [61]. Adem\'e1s, como en un audio hay se\'f1ales sonoras que var\'edan con el tiempo, se debe aplicar la transformada r\'e1pida de Fourier (
+\f9\i Fast Fourier Transform
+\f1\i0 , FFT), que recoge los espectros de la se\'f1al aplicando la transformada de Fourier en segmentos muy cortos del audio superpuestos. De esta manera, se convierte la se\'f1al del dominio del tiempo al dominio de la frecuencia, obteniendo lo que se conoce como espectro. 
+\fs24 \
+
+\fs32 La escala de Mel interpreta las frecuencias de manera similar a como lo hace el o\'eddo humano. Tiene como unidad un tono, tal que distancias iguales entre tonos suenan igual de distantes para una persona. Un espectrograma de Mel, por tanto, no es m\'e1s 
+\fs24 \
+
+\fs32 42 
+\fs24 \
+
+\fs32 que el espectro obtenido de aplicar la FFT a la onda de audio y representado en la escala de Mel. 
+\fs24 \
+
+\fs32 Para obtener la representaci\'f3n del espectrograma en esta escala, se debe aplicar un determinado n\'famero de filtros de Mel. Dependiendo del n\'famero de filtros aplicados se obtendr\'e1 un determinado n\'famero de bandas, lo que est\'e1 directamente relacionado con la resoluci\'f3n de la matriz obtenida. Si adem\'e1s se representan las intensidades del sonido en escala logar\'edtmica (dB), se obtiene lo que se conoce como espectrograma de log-Mel. En la Figura 3-9 se muestra un espectrograma de Log-Mel de 128 bandas. 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f5\b\fs29\fsmilli14667 \cf2 Figura 3-9. 
+\f1\b0 Espectrograma log-Mel de 128 bandas. 
+\fs24 \
+
+\f5\b\fs29\fsmilli14667 Figura 3-10. 
+\f1\b0 Espectrograma delta-log-Mel de 128 bandas. 
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page47image57336976.png \width7294 \height4272 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2  {{\NeXTGraphic page47image57341552.png \width7180 \height4249 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs32 \cf2 43 
+\fs24 \
+
+\fs32 Tambi\'e9n existen otras variaciones del espectrograma de Mel, como pueden ser el delta-log-Mel o el delta-delta-log-Mel. Estos espectrogramas representan la din\'e1mica del espectrograma de log-Mel, es decir, son una diferenciaci\'f3n de \'e9ste. En la Figura 3- 10 se puede ver un espectrograma delta-log-Mel de 128 bandas. \
+\pard\tx6892\pardeftab720\sa240\partightenfactor0
+\cf2 \cb3 ESTA MUY BIEN HECHO EL FUNDAMENTO TEORICO.
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs42\fsmilli21333 \cf2 Clasificaci\'f3n de sonidos ambientales usando la transformada wavelet continua y redes neuronales convolucionales 
+\fs24 \
+Francisco J. Mondrag\'f3n, H\'e9ctor M. P\'e9rez-Meana*, Gustavo Calder\'f3n, y Jonathan Jim\'e9nez \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3 \cf2 Escuela Superior de Ingenier\'eda Mec\'e1nica y El\'e9ctrica Culhuacan, SEPI, Avenida Santa Ana 1000, San Francisco Culhuacan, Culhuacan CTM V, Coyoac\'e1n, 04440 CDMX, M\'e9xico. (Correo-e: fmondragon1200@alumnio.ipn.mx; hmperezm@ipn.mx; jjimeneza@alumno.ipn.mx; gus_auza@hotmail.com) 
+\f1 \
+
+\f3 *Autor a quien debe ser dirigida la correspondencia. 
+\f1 \
+Recibido Sep. 1, 2020; Aceptado Oct. 27, 2020; Versi\'f3n final Dic. 23, 2020, Publicado Abr. 2021 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs26\fsmilli13333 \cf2 Resumen 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs26\fsmilli13333 \cf2 Este art\'edculo propone un esquema en el cual inicialmente se obtiene una representaci\'f3n tiempo-frecuencia usando la transformada wavelet continua (CWT), la cual tiene una resoluci\'f3n logar\'edtmica en el plano de la frecuencia similar a la del sistema auditivo humano. El desarrollo de este tipo de sistemas para la clasificaci\'f3n de sonidos ambientales ha sido un t\'f3pico de amplia investigaci\'f3n debido a sus aplicaciones en diversos campos de la ciencia e ingenier\'eda. Al igual que otros esquemas de clasificaci\'f3n, estos se basan en la extracci\'f3n de par\'e1metros caracter\'edsticos, los cuales se insertan en la etapa de clasificaci\'f3n. La CWT se inserta en una red neuronal profunda, para llevar a cabo el proceso de clasificaci\'f3n. Los resultados obtenidos, usando bases de datos de sonidos ambientales tales como, ESC-50, TUT Acoustic Scene y SONAM-50, demuestran que el esquema propuesto proporciona un funcionamiento superior al de otros esquemas previamente propuestos. 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs26\fsmilli13333 \cf2 Palabras clave: reconocimiento sonidos ambientales; red neuronal profunda; transformada wavelet continua; espectrograma 
+\fs24 \
+
+\fs26\fsmilli13333 INTRODUCCI\'d3N 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs26\fsmilli13333 \cf2 La clasificaci\'f3n de sonidos ambientales (ESC), por sus siglas en Ingles 
+\f1 \'93Environmental Sound Classification\'94, 
+\f3 es un \'e1rea de investigaci\'f3n en reciente crecimiento, debido al crucial rol que tienen los sonidos en nuestra interacci\'f3n con el entorno. Por lo tanto, es fundamental para el \'e9xito de la inteligencia artificial que los robots o las computadoras puedan comprender los sonidos, en forma similar a como lo hacen los humanos. El Desarrollo de tecnolog\'edas que ayuden en tareas como, sistemas para el monitoreo de cuartos inteligentes, mejorar la navegaci\'f3n aut\'f3noma (Chu et al., 2009), determinaci\'f3n de especies de aves y mam\'edferos basado en los sonidos que producen (Abber, 2020; Potamitis, 2014; Xie y Zhu, 2019), clasificaci\'f3n de sonidos en ayudas auditivas (Alexandre et al., 2007), indexaci\'f3n y recuperaci\'f3n de contenido multimedia (Tong et al., 2014), entre otras ha sido la motivaci\'f3n para el desarrollo de sistemas de ESC. 
+\f1\fs24 \
+
+\f3\fs26\fsmilli13333 Algunos enfoques utilizados en la tarea de ESC se basan en caracter\'edsticas como la Transformada de Fourier Discreta (DFT), coeficientes cepstrales de las frecuencias Mel (MFCC) (Chu, et al., 2009; Salamon y Bello, 2014), coeficientes cepstrales de frecuencias gammaton (GFCC), caracter\'edsticas estad\'edsticas y combinaci\'f3n de estas. La representaci\'f3n de los sonidos basada en el sistema de audici\'f3n humana tiene un gran inter\'e9s en el desarrollo de caracter\'edsticas para realizar ESC. Los modelos auditivos se basan en algoritmos matem\'e1ticos que intentan imitar el procesamiento de audici\'f3n humana dise\'f1ados a partir de experimentos psicof\'edsicos y fisiol\'f3gicos. 
+\f1\fs24 \
+
+\f3\fs26\fsmilli13333 El an\'e1lisis wavelet (Mart\'ednez et al., 2018; Jim\'e9nez et al., 2018) se est\'e1 convirtiendo en una herramienta matem\'e1tica habitual en el estudio de se\'f1ales no estacionarias como lo son la mayor\'eda de los sonidos. Esta herramienta realiza el an\'e1lisis de una se\'f1al usando versiones escaladas y trasladadas de una funci\'f3n base llamada funci\'f3n wavelet madre 
+\f0 \uc0\u61561 
+\f3 (t). Hay dos diferentes tipos de transformada wavelet: la Transformada Wavelet Discreta (DWT) y la Transformada Wavelet Continua (CWT). La principal diferencia entre ambas transformadas es la forma en la cual el par\'e1metro de escalamiento es discretizado. La CWT discretiza m\'e1s fielmente que la DWT. La diferencia es que mientras que en la CWT normalmente se determina alguna base que es una potencia fraccionaria de dos, es decir 2
+\fs16 \up10 j/v 
+\fs26\fsmilli13333 \up0 con j=1, 2, 3, ..., n donde el par\'e1metro v es conocido como el n\'famero de voces por octava, ya que para poder incrementar la escala en una octava se necesitan v escalas intermedias, mientras que en la DWT el par\'e1metro de escalamiento siempre se discretiza con potencias enteras de dos, esto es 2
+\fs16 \up10 j 
+\fs26\fsmilli13333 \up0 con j=1 ,2, 3, ..., n por lo que el n\'famero de voces por octava es siempre 1, por lo tanto la CWT dependiendo del valor de v nos proporciona una mayor resoluci\'f3n en frecuencia de la se\'f1al en an\'e1lisis. Sin embargo, esto tambi\'e9n aumenta la cantidad de c\'e1lculo requerido. La CWT se puede considerar como un banco de filtros que tienen subbandas de frecuencia espaciadas de manera logar\'edtmica similar al sistema auditivo humano, por lo cual provee una representaci\'f3n tiempo frecuencia con una resoluci\'f3n logar\'edtmica en el eje de la frecuencia, lo que proporciona una mejor representaci\'f3n para la inspecci\'f3n visual, como se muestra en la figura 1. 
+\f1\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.44.44.png \width9720 \height6180 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\f1 \cf2 \cb6 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.48.31.png \width15200 \height7880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb6 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs26\fsmilli13333 \cf2 \cb1 Bases de Datos 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs26\fsmilli13333 \cf2 Las bases de datos empleadas para llevar a cabo la evaluaci\'f3n del sistema propuesto son: a) ESC-50 (Piczak, 2015b), la cual contiene 2000 archivos de audio de sonidos ambientales con 5 segundos de duraci\'f3n cada uno, en formato WAV, con frecuencia de muestreo de 44,100 Hz. Est\'e1 dividida en 50 clases con 40 muestras por cada clase. Esta base de datos incluye sonidos tales como vocalizaciones de animales, sonidos provocados por el agua, paisajes sonoros naturales, sonidos no vocalizados emitidos por humanos, sonidos dom\'e9sticos y sonidos urbanos. b) La segunda base de datos desarrollada por nosotros, llamada SONAM- 50, contiene 1200 grabaciones de diferentes longitudes de tiempo, en formato WAV, con frecuencia de muestreo de 32,000 Hz. Est\'e1 basada en sonidos usados en el estudio de similitud y categorizaci\'f3n de sonidos ambientales reportado por Gygi (Gygi et al., 2007). Esta base de datos tiene 50 clases de sonidos ambientales tales como: sonidos producidos por maquinas, sonidos de varias condiciones clim\'e1ticas, sonidos humanos no vocalizados, vocalizaciones de animales y sonidos generados por actividades humanas. Cada uno con 24 muestras por cada clase. Como preparaci\'f3n para el procesamiento de estas bases de datos se aplic\'f3 una compuerta de ruido, usando como umbral -30 dB para la m\'e1xima amplitud de la grabaci\'f3n antes de saturar y 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3 \cf2 70 
+\f1 Informaci\'f3n Tecnol\'f3gica \'96 Vol. 32 No 2 \'96 2021 \
+
+\f3 Clasificaci\'f3n de sonidos ambientales usando la transformada wavelet continua y redes neuronales Mondrag\'f3n 
+\f1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 {{\NeXTGraphic page11image57468672.png \width8174 \height16 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs26\fsmilli13333 \cf2 se normalizaron las grabaciones a un nivel de -3 dB del nivel m\'e1ximo en la grabaci\'f3n. c) La tercera base usada, la TUT Acoustic Scene (
+\fs24 Mesaros A. et al. 2017
+\fs26\fsmilli13333 ) la cual consiste en grabaciones de varios escenarios ac\'fasticos con distintas locaciones de grabaci\'f3n, para cada locaci\'f3n se realizaron grabaciones de 3 a 5 minutos y despu\'e9s fueron divididos en archivos de 10 segundos de duraci\'f3n, estos tienen una frecuencia de muestreo de 44100 Hz, 24 bits de resoluci\'f3n y estereof\'f3nica. Contiene 15 distintos escenarios ac\'fasticos con 312 muestras por cada escenario, estos escenarios los conforma grabaciones hechas en alg\'fan transporte (autob\'fas, autom\'f3vil, tren, tranv\'eda), en el interior de un recinto (cafeter\'eda, tienda, casa, biblioteca, estaci\'f3n de metro, oficina) y en el exterior (ciudad, camino forestal, playa, residencial, parque). 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs26\fsmilli13333 \cf2 CONCLUSIONES 
+\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\fs26\fsmilli13333 \cf2 Este art\'edculo propone un algoritmo para la clasificaci\'f3n o reconocimiento de eventos ac\'fasticos o sonidos ambientales basado en la transformada wavelet continua y redes neuronales profundas. Los resultados experimentales, (figura 9) muestran las funciones wavelet madre log-normal y Morlet, proporcionan los CWT espectrogramas m\'e1s apropiados para caracterizar las se\'f1ales de audio. Se evaluaron adem\'e1s diversas estructuras de redes DNN y de la Tabla 2 se puede observar que, de las redes evaluadas, la red VGG-19 es la m\'e1s adecuada para realizar la tarea de ESC. As\'ed mismo, dado que el mapa de color de los espectrogramas tiene un rol importante, se llev\'f3 a cabo una evaluaci\'f3n de varios de ellos, obteni\'e9ndose que los mapas de color Viridis, Jet y Gray podr\'edan ser adecuados para crear los CWT espectrogramas usado para clasificar los sonidos. As\'ed mismo, se encontr\'f3 que una duraci\'f3n de 2.5s parece adecuada para llevar a cabo el reconocimiento, al igual que una frecuencia de muestreo de aproximadamente 22kHz. Finalmente se analiz\'f3 el n\'famero de voces por octava que proporcionan el mejor funcionamiento del sistema propuesto, encontr\'e1ndose que el incremento del n\'famero de voces por octava impacta de manera importante en la precisi\'f3n al implementar ESC. Una vez determinados los par\'e1metros del sistema se evalu\'f3 su funcionamiento cuando se requiere detectar tanto eventos ac\'fasticos, como sonidos ambientales. Los resultados experimentales obtenidos muestran que cuando el algoritmo propuesto se emplea para reconocer eventos ac\'fasticos, \'e9ste presenta una tasa de reconocimiento del 85.75% usando la base de datos ESC-50, 89.26% usando las bases de datos ESC-50 y 90.85% usando la base de datos TUT Acoustic scene, respectivamente, la cual es superior al reconocimiento proporcionado por otros esquemas previamente reportados en la literatura, basados en la transformada wavelet y redes DNN; adem\'e1s de ser muy cercano a otro esquema basado en m\'e1quinas de Boltzman restringidas (RBM), como se muestra en la Tabla 7. Finalmente se observa que, el sistema propuesto presenta una tasa de reconocimiento de 80% cuando se emplea para el reconocimiento de sonidos ambientales usando la base de datos ESC-50 y 87.6% de reconocimiento cuando se emplea la base de datos SONAM-50. 
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb3 ES MUY INTERESANTE LO QUE LOGRAN CON LA TRANSFORMADA DE WAVELET PARECE SER LA MEJOR PARA RUIDOS AMBIENTALES,  HABRIA QUE PORBAR CON SU MODELO PROPUESTO, Y ME GUSTA COMO EXPLICA LA BASE DE DATOS, NOSOTROS DEBEMOS PONER LA TOMA DE MUESTRA CON EL CELULAR ESPECIFICACIONES Y COMO CORTAMOS LOS AUDIOS Y SUS ESPECIFICACIONES\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \cb1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+SISTEMA DE  PREDICCION DE RUIDO URBANO MEDIANTE REDES NEURONALES TESIS DOCTORAL NATALIA GENARO GARCIA\
+\
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 {{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.54.46.png \width9800 \height10040 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}{{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.56.22.png \width10300 \height15660 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}{{\NeXTGraphic Captura de Pantalla 2024-06-13 a la(s) 10.56.34.png \width9700 \height4440 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \
+DIFIERE DE LO QUE ESTAMOS HACIENDO, PERO ES INTERESANTE VER LO INTERVALOS DE TIEMPO Y LAS VARIABLES QUE MIDEN PARA PODER CLASIFICAR EL SONIDO, NOSOTROS DEBERIAMOS AGREGAR LA VELOCIDAD DE LOS VEHICULOS?, EL LUGAR EN DONDE ME UBICO SIEMPRE PARA GRABAR LOS VIDEOS HAY UN REDUCTOR DE VELOCIDAD, EN PRINCIPIO TODPS LOS AUTOS QUE GRABE DEBERIAN TENER APROXIMADAMENTE LA MISMA VELOCIDAD.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\
+}
