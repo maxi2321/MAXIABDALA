@@ -28,7 +28,6 @@ class CNN_LSTM(torch.nn.Module):
 
     def forward(self,x):
         x = self.cnn(x)
-        print(x.shape)
         x, _ = self.lstm(x)
         x = self.linear(x)
         return self.relu(x[-1])

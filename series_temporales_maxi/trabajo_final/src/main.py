@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 
 SR = 44100
 IMG_WIDTH = 10
-SPECT_WS = 300
+SPECT_WS = 800
 # we read the data
 data_folder = os.path.join('.', 'audios')
 data_raw = read_folder(data_folder, samplerate=SR)
@@ -50,7 +50,6 @@ for e in range(epochs):
     aux_loss = 0
     for i in range(len(x_tr)):
         x = torch.FloatTensor(x_tr[i]).unsqueeze(1)
-        print(x.shape)
         y_pred = model(x).view(1,-1)
         loss = criterio(y_pred, torch.LongTensor(y_tr[i]))
         optim.zero_grad()  # pongo en 0 los gradiente

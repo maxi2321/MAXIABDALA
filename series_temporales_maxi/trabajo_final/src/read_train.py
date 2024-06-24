@@ -27,7 +27,7 @@ def create_specs(x, ws, sr):
     '''Wrapper para calcular los espectrogramas de manera sencilla
     Regresa las frecuencias, los intervalos de tiempo y el espectrograma normalizado entre 0 y 1'''
     N = len(x)
-    SFT = ShortTimeFFT(windows.boxcar(400), hop=400, fs=sr, scale_to='magnitude')
+    SFT = ShortTimeFFT(windows.boxcar(ws), hop=ws, fs=sr, scale_to='magnitude')
     ts = SFT.delta_t * np.arange(N)/ws
     Sx = SFT.spectrogram(x)  # perform the STFT
     Sx_l = np.log(Sx[:])
