@@ -9,8 +9,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 SR = 44100
-IMG_WIDTH = 30
-SPECT_WS = 400
+IMG_WIDTH = 40
+SPECT_WS = 800
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 # we read the data
 data_folder = os.path.join('.', 'audios')
 data_raw = read_folder(data_folder, samplerate=SR)
@@ -35,7 +38,7 @@ x_tr, x_val, y_tr, y_val =  train_test_split(x,y, test_size=0.25)
 print(f'training set length: {len(x_tr)} - validation set length: {len(x_val)}')
 # we create the model and optimizer
 n_freqs = SPECT_WS//2+1
-model = CNN_LSTM(w=IMG_WIDTH, h=n_freqs, categories=5)
+model = CNN_LSTM(w=IMG_WIDTH, h=n_freqs, categories=5).to(device)
 optim = torch.optim.Adam(model.parameters(), lr = 1e-4)
 criterio = torch.nn.CrossEntropyLoss()
 
@@ -48,10 +51,11 @@ best_test_acc = 0
 filename = './best_model_params.pth'
 for e in range(epochs):
     aux_loss = 0
+    model.train()
     for i in range(len(x_tr)):
-        x = torch.FloatTensor(x_tr[i]).unsqueeze(1)
+        x = torch.FloatTensor(x_tr[i]).unsqueeze(1).to(device)
         y_pred = model(x).view(1,-1)
-        loss = criterio(y_pred, torch.LongTensor(y_tr[i]))
+        loss = criterio(y_pred, torch.LongTensor(y_tr[i]).to(device))
         optim.zero_grad()  # pongo en 0 los gradiente
         loss.backward()     # calculo las derivadas respecto de los parametros
         optim.step()        #hago un descenso en la direccion opuesta al gradiente
@@ -64,10 +68,10 @@ for e in range(epochs):
         val_loss = 0
         preds = []
         for i in range(len(x_val)):
-            x = torch.FloatTensor(x_val[i]).unsqueeze(1)
+            x = torch.FloatTensor(x_val[i]).unsqueeze(1).to(device)
             y_pred = model(x).view(1,-1)
-            val_loss += criterio(y_pred, torch.LongTensor(y_val[i])).item()
-            preds.append([y_pred.numpy().argmax()])
+            val_loss += criterio(y_pred, torch.LongTensor(y_val[i]).to(device)).item()
+            preds.append([y_pred.cpu().numpy().argmax()])
         val_loss/=len(x_val)
         history_acc.append(accuracy_score(y_val, preds))
         history_test.append(val_loss)

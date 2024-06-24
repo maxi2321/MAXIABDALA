@@ -20,9 +20,9 @@ class CNN_LSTM(torch.nn.Module):
             torch.nn.Dropout2d(self.dr),
             torch.nn.ReLU(),
             torch.nn.Flatten(),
-            torch.nn.Linear(in_features = 16 * self.w_half * self.h_half, out_features = 10)
+            torch.nn.Linear(in_features = 16 * self.w_half * self.h_half, out_features = 64)
         )
-        self.lstm = torch.nn.LSTM(input_size=10, hidden_size=64, num_layers=3, batch_first=True, dropout=self.dr)
+        self.lstm = torch.nn.LSTM(input_size=64, hidden_size=64, num_layers=3, batch_first=True, dropout=self.dr)
         self.linear = torch.nn.Linear(in_features=64, out_features=self.categories)
         self.relu = torch.nn.ReLU()
 
