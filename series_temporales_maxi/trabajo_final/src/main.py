@@ -9,8 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 SR = 44100
-IMG_WIDTH = 10
-SPECT_WS = 800
+IMG_WIDTH = 30
+SPECT_WS = 400
 # we read the data
 data_folder = os.path.join('.', 'audios')
 data_raw = read_folder(data_folder, samplerate=SR)

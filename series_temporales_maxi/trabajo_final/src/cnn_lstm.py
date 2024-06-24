@@ -11,16 +11,16 @@ class CNN_LSTM(torch.nn.Module):
         self.categories = categories
         self.dr = 0.4
         self.cnn = torch.nn.Sequential(
-            torch.nn.Conv2d(in_channels=1, out_channels=16, kernel_size=(3,3), stride=(1,1), padding=(1,1)),
+            torch.nn.Conv2d(in_channels=1, out_channels=8, kernel_size=(3,3), stride=(1,1), padding=(1,1)),
             torch.nn.MaxPool2d(kernel_size=(2,2)),
             torch.nn.ReLU(),
             torch.nn.Dropout2d(self.dr),
-            torch.nn.Conv2d(in_channels=16, out_channels=32, kernel_size=(3,3), stride=(1,1), padding=(1,1)),
+            torch.nn.Conv2d(in_channels=8, out_channels=16, kernel_size=(3,3), stride=(1,1), padding=(1,1)),
             torch.nn.MaxPool2d(kernel_size=(2,2)),
             torch.nn.Dropout2d(self.dr),
             torch.nn.ReLU(),
             torch.nn.Flatten(),
-            torch.nn.Linear(in_features = 32 * self.w_half * self.h_half, out_features = 10)
+            torch.nn.Linear(in_features = 16 * self.w_half * self.h_half, out_features = 10)
         )
         self.lstm = torch.nn.LSTM(input_size=10, hidden_size=64, num_layers=3, batch_first=True, dropout=self.dr)
         self.linear = torch.nn.Linear(in_features=64, out_features=self.categories)
